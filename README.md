@@ -1,4 +1,4 @@
-# vim-nushell
+# nushell-syntax-vim
 Nushell syntax highlighting and indentation for Vim
 
 ## Installation
