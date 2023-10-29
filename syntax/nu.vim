@@ -573,10 +573,10 @@ syn match nuDur "wk\>"
 
 syn match nuFlag "\<-\k\+"
 
-syn match nuNumber '\d\+'
-syn match nuNumber '\d\+\.\d\+'
-syn match nuNumber '\d\+[eE]\d\+'
-syn match nuNumber '\d\+\.\d\+[eE]\d\+'
+syn match nuNumber "[^a-zA-Z_]\d\+"
+syn match nuNumber "[^a-zA-Z_]\d\+\.\d\+"
+syn match nuNumber "[^a-zA-Z_]\d\+[eE]\d\+"
+syn match nuNumber "[^a-zA-Z_]\d\+\.\d\+[eE]\d\+"
 
 syn region nuString start=/\v"/ skip=/\v\\./ end=/\v"/ contains=nuEscaped
 syn region nuString start='\'' end='\''
