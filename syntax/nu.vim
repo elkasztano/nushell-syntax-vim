@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Nushell
 " Maintainer: El Kasztano
-" Latest Revision: 29 October 2023
+" Latest Revision: 30 October 2023
 
 if exists("b:current_syntax")
 	finish
@@ -504,6 +504,8 @@ syn match nuCmd "\<with-env\>"
 syn match nuCmd "\<wrap\>"
 syn match nuCmd "\<zip\>"
 
+syn match nuCmd "\<exists\>"
+
 syn keyword nuTodo contained TODO FIXME NOTE
 syn match nuComment "#.*$" contains=nuTodo
 
@@ -587,7 +589,7 @@ syn region nuStrInt start=/$"/ skip=/\\./ end=/"/ contains=nuNested,nuEscaped
 
 syn region nuNested start="("hs=s+1 end=")"he=e-1 contained
 
-syn match nuClosure "|[^ \t\n]\+|"hs=s+1,he=e-1
+syn match nuClosure "|\(\w\|, \)\+|" 
 
 syn match nuEscaped "\\n"
 syn match nuEscaped "\\t"
@@ -616,6 +618,6 @@ hi def link nuStrInt	PreProc
 hi def link nuNested	Special
 hi def link nuFlag	Special
 hi def link nuEscaped	Special
-hi def link nuCondi	Keyword
-hi def link nuClosure	PreProc
+hi def link nuCondi	Type
+hi def link nuClosure	Type
 hi def link nuNumber	Number
