@@ -614,8 +614,8 @@ hi def link nuUnit	Type
 hi def link nuDur	Type
 hi def link nuPrpty	Special
 hi def link nuSubCmd	Identifier
-hi def link nuStrInt	PreProc
-hi def link nuNested	Special
+hi def link nuStrInt	Constant
+hi def link nuNested	PreProc
 hi def link nuFlag	Special
 hi def link nuEscaped	Special
 hi def link nuCondi	Type
