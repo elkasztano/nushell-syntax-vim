@@ -2,11 +2,11 @@
 # this is my very first nushell script
 # use at your own risk
 
-let system_os = (sys).host.name
+let system_os = (sys).host.long_os_version
 
-if not ($system_os ends-with "GNU/Linux") {
+if not ($system_os starts-with "Linux") {
   print $"your system: '($system_os)'"
-  print "currently only GNU/Linux systems supported - exiting"
+  print "currently only Linux systems supported - exiting"
   exit 1
 }
 
