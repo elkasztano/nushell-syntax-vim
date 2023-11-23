@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Nushell
 " Maintainer: El Kasztano
-" Latest Revision: 30 October 2023
+" Latest Revision: 19 November 2023
 
 if exists("b:current_syntax")
 	finish
@@ -9,536 +9,536 @@ endif
 
 syn iskeyword @,192-255,-,_
 
-syn match nuCmd "\<alias\>"
-syn match nuCmd "\<all\>"
-syn match nuCmd "\<ansi\>"
-syn match nuCmd "\<ansi gradient\>"
-syn match nuCmd "\<ansi link\>"
-syn match nuCmd "\<ansi strip\>"
-syn match nuCmd "\<any\>"
-syn match nuCmd "\<append\>"
-syn match nuCmd "\<ast\>"
-syn match nuCmd "\<banner\>"
-syn match nuCmd "\<bits\>"
-syn match nuCmd "\<bits and\>"
-syn match nuCmd "\<bits not\>"
-syn match nuCmd "\<bits or\>"
-syn match nuCmd "\<bits rol\>"
-syn match nuCmd "\<bits ror\>"
-syn match nuCmd "\<bits shl\>"
-syn match nuCmd "\<bits shr\>"
-syn match nuCmd "\<bits xor\>"
-syn match nuCmd "\<break\>"
-syn match nuCmd "\<bytes\>"
-syn match nuCmd "\<bytes add\>"
-syn match nuCmd "\<bytes at\>"
-syn match nuCmd "\<bytes build\>"
-syn match nuCmd "\<bytes collect\>"
-syn match nuCmd "\<bytes ends-with\>"
-syn match nuCmd "\<bytes index-of\>"
-syn match nuCmd "\<bytes length\>"
-syn match nuCmd "\<bytes remove\>"
-syn match nuCmd "\<bytes replace\>"
-syn match nuCmd "\<bytes reverse\>"
-syn match nuCmd "\<bytes starts-with\>"
-syn match nuCmd "\<cal\>"
-syn match nuCmd "\<cd\>"
-syn match nuCmd "\<char\>"
-syn match nuCmd "\<clear\>"
-syn match nuCmd "\<collect\>"
-syn match nuCmd "\<columns\>"
-syn match nuCmd "\<commandline\>"
-syn match nuCmd "\<compact\>"
-syn match nuCmd "\<complete\>"
-syn match nuCmd "\<config\>"
-syn match nuCmd "\<config env\>"
-syn match nuCmd "\<config nu\>"
-syn match nuCmd "\<config reset\>"
-syn match nuCmd "\<const\>"
-syn match nuCmd "\<continue\>"
-syn match nuCmd "\<cp\>"
-syn match nuCmd "\<cp-old\>"
-syn match nuCmd "\<create_left_prompt\>"
-syn match nuCmd "\<create_right_prompt\>"
-syn match nuCmd "\<date\>"
-syn match nuCmd "\<date format\>"
-syn match nuCmd "\<date humanize\>"
-syn match nuCmd "\<date list-timezone\>"
-syn match nuCmd "\<date now\>"
-syn match nuCmd "\<date to-record\>"
-syn match nuCmd "\<date to-table\>"
-syn match nuCmd "\<date to-timezone\>"
-syn match nuCmd "\<debug\>"
-syn match nuCmd "\<debug info\>"
-syn match nuCmd "\<decode\>"
-syn match nuCmd "\<decode base64\>"
-syn match nuCmd "\<decode hex\>"
-syn match nuCmd "\<def\>" nextgroup=nuIdtfr,nuSubCmd skipwhite
-syn match nuCmd "\<def-env\>" nextgroup=nuIdtfr,nuSubCmd skipwhite
-syn match nuCmd "\<default\>"
-syn match nuCmd "\<describe\>"
-syn match nuCmd "\<detect columns\>"
-syn match nuCmd "\<drop\>"
-syn match nuCmd "\<dfr\>"
-syn match nuCmd "\<dfr agg\>"
-syn match nuCmd "\<dfr agg-groups\>"
-syn match nuCmd "\<dfr all-false\>"
-syn match nuCmd "\<dfr all-true\>"
-syn match nuCmd "\<dfr append\>"
-syn match nuCmd "\<dfr arg-max\>"
-syn match nuCmd "\<dfr arg-min\>"
-syn match nuCmd "\<dfr arg-sort\>"
-syn match nuCmd "\<dfr arg-true\>"
-syn match nuCmd "\<dfr arg-unique\>"
-syn match nuCmd "\<dfr arg-where\>"
-syn match nuCmd "\<dfr as\>"
-syn match nuCmd "\<dfr as-date\>"
-syn match nuCmd "\<dfr as-datetime\>"
-syn match nuCmd "\<dfr cache\>"
-syn match nuCmd "\<dfr col\>"
-syn match nuCmd "\<dfr collect\>"
-syn match nuCmd "\<dfr columns\>"
-syn match nuCmd "\<dfr concat-str\>"
-syn match nuCmd "\<dfr concatenate\>"
-syn match nuCmd "\<dfr contains\>"
-syn match nuCmd "\<dfr count\>"
-syn match nuCmd "\<dfr count-null\>"
-syn match nuCmd "\<dfr cumulative\>"
-syn match nuCmd "\<dfr datepart\>"
-syn match nuCmd "\<dfr drop\>"
-syn match nuCmd "\<dfr drop-duplicates\>"
-syn match nuCmd "\<dfr drop-nulls\>"
-syn match nuCmd "\<dfr dtypes\>"
-syn match nuCmd "\<dfr dummies\>"
-syn match nuCmd "\<dfr explode\>"
-syn match nuCmd "\<dfr expr-not\>"
-syn match nuCmd "\<dfr fetch\>"
-syn match nuCmd "\<dfr fill-nan\>"
-syn match nuCmd "\<dfr fill-null\>"
-syn match nuCmd "\<dfr filter\>"
-syn match nuCmd "\<dfr filter-with\>"
-syn match nuCmd "\<dfr first\>"
-syn match nuCmd "\<dfr flatten\>"
-syn match nuCmd "\<dfr get\>"
-syn match nuCmd "\<dfr get-day\>"
-syn match nuCmd "\<dfr get-hour\>"
-syn match nuCmd "\<dfr get-minute\>"
-syn match nuCmd "\<dfr get-month\>"
-syn match nuCmd "\<dfr get-nanosecond\>"
-syn match nuCmd "\<dfr get-ordinal\>"
-syn match nuCmd "\<dfr get-second\>"
-syn match nuCmd "\<dfr get-week\>"
-syn match nuCmd "\<dfr get-weekday\>"
-syn match nuCmd "\<dfr get-year\>"
-syn match nuCmd "\<dfr group-by\>"
-syn match nuCmd "\<dfr implode\>"
-syn match nuCmd "\<dfr into-df\>"
-syn match nuCmd "\<dfr into-lazy\>"
-syn match nuCmd "\<dfr into-nu\>"
-syn match nuCmd "\<dfr is-duplicated\>"
-syn match nuCmd "\<dfr is-in\>"
-syn match nuCmd "\<dfr is-not-null\>"
-syn match nuCmd "\<dfr is-null\>"
-syn match nuCmd "\<dfr is-unique\>"
-syn match nuCmd "\<dfr join\>"
-syn match nuCmd "\<dfr last\>"
-syn match nuCmd "\<dfr lit\>"
-syn match nuCmd "\<dfr lowercase\>"
-syn match nuCmd "\<dfr ls\>"
-syn match nuCmd "\<dfr max\>"
-syn match nuCmd "\<dfr mean\>"
-syn match nuCmd "\<dfr median\>"
-syn match nuCmd "\<dfr melt\>"
-syn match nuCmd "\<dfr min\>"
-syn match nuCmd "\<dfr n-unique\>"
-syn match nuCmd "\<dfr not\>"
-syn match nuCmd "\<dfr open\>"
-syn match nuCmd "\<dfr otherwise\>"
-syn match nuCmd "\<dfr quantile\>"
-syn match nuCmd "\<dfr query\>"
-syn match nuCmd "\<dfr rename\>"
-syn match nuCmd "\<dfr replace\>"
-syn match nuCmd "\<dfr replace-all\>"
-syn match nuCmd "\<dfr reverse\>"
-syn match nuCmd "\<dfr rolling\>"
-syn match nuCmd "\<dfr sample\>"
-syn match nuCmd "\<dfr select\>"
-syn match nuCmd "\<dfr set\>"
-syn match nuCmd "\<dfr set-with-idx\>"
-syn match nuCmd "\<dfr shape\>"
-syn match nuCmd "\<dfr shift\>"
-syn match nuCmd "\<dfr slice\>"
-syn match nuCmd "\<dfr sort-by\>"
-syn match nuCmd "\<dfr std\>"
-syn match nuCmd "\<dfr str-lengths\>"
-syn match nuCmd "\<dfr str-slice\>"
-syn match nuCmd "\<dfr strftime\>"
-syn match nuCmd "\<dfr sum\>"
-syn match nuCmd "\<dfr summary\>"
-syn match nuCmd "\<dfr take\>"
-syn match nuCmd "\<dfr to-arrow\>"
-syn match nuCmd "\<dfr to-avro\>"
-syn match nuCmd "\<dfr to-csv\>"
-syn match nuCmd "\<dfr to-jsonl\>"
-syn match nuCmd "\<dfr to-parquet\>"
-syn match nuCmd "\<dfr unique\>"
-syn match nuCmd "\<dfr uppercase\>"
-syn match nuCmd "\<dfr value-counts\>"
-syn match nuCmd "\<dfr var\>"
-syn match nuCmd "\<dfr when\>"
-syn match nuCmd "\<dfr with-column\>"
-syn match nuCmd "\<do\>"
-syn match nuCmd "\<drop\>"
-syn match nuCmd "\<drop column\>"
-syn match nuCmd "\<drop nth\>"
-syn match nuCmd "\<du\>"
-syn match nuCmd "\<each\>"
-syn match nuCmd "\<each while\>"
-syn match nuCmd "\<echo\>"
-syn match nuCmd "\<encode\>"
-syn match nuCmd "\<encode base64\>"
-syn match nuCmd "\<encode hex\>"
-syn match nuCmd "\<add\>"
-syn match nuCmd "\<enumerate\>"
-syn match nuCmd "\<error make\>"
-syn match nuCmd "\<every\>"
-syn match nuCmd "\<exec\>"
-syn match nuCmd "\<exit\>"
-syn match nuCmd "\<explain\>"
-syn match nuCmd "\<explore\>"
-syn match nuCmd "\<export\>"
-syn match nuCmd "\<export alias\>"
-syn match nuCmd "\<export const\>"
-syn match nuCmd "\<export def\>"
-syn match nuCmd "\<export def-env\>"
-syn match nuCmd "\<export extern\>"
-syn match nuCmd "\<export extern-wrapped\>"
-syn match nuCmd "\<export module\>"
-syn match nuCmd "\<export use\>"
-syn match nuCmd "\<export-env\>"
-syn match nuCmd "\<extern\>"
-syn match nuCmd "\<extern-wrapped\>"
-syn match nuCmd "\<fill\>"
-syn match nuCmd "\<filter\>"
-syn match nuCmd "\<find\>"
-syn match nuCmd "\<first\>"
-syn match nuCmd "\<flatten\>"
-syn match nuCmd "\<fmt\>"
-syn match nuCmd "\<for\>"
-syn match nuCmd "\<format\>"
-syn match nuCmd "\<format date\>"
-syn match nuCmd "\<format duration\>"
-syn match nuCmd "\<format filesize\>"
-syn match nuCmd "\<from\>" nextgroup=nuPrpty skipwhite
-syn match nuCmd "\<from csv\>"
-syn match nuCmd "\<from json\>"
-syn match nuCmd "\<from nuon\>"
-syn match nuCmd "\<from ods\>"
-syn match nuCmd "\<from ssv\>"
-syn match nuCmd "\<from toml\>"
-syn match nuCmd "\<from tsv\>"
-syn match nuCmd "\<from url\>"
-syn match nuCmd "\<from xlsx\>"
-syn match nuCmd "\<from xml\>"
-syn match nuCmd "\<from yaml\>"
-syn match nuCmd "\<from yml\>"
-syn match nuCmd "\<goto\>"
-syn match nuCmd "\<get\>" nextgroup=nuPrpty skipwhite
-syn match nuCmd "\<glob\>"
-syn match nuCmd "\<grid\>"
-syn match nuCmd "\<group\>"
-syn match nuCmd "\<group-by\>"
-syn match nuCmd "\<hash\>"
-syn match nuCmd "\<hash md5\>"
-syn match nuCmd "\<hash sha256\>"
-syn match nuCmd "\<headers\>"
-syn match nuCmd "\<help\>"
-syn match nuCmd "\<help aliases\>"
-syn match nuCmd "\<help commands\>"
-syn match nuCmd "\<help escapes\>"
-syn match nuCmd "\<help externs\>"
-syn match nuCmd "\<help modules\>"
-syn match nuCmd "\<help operators\>"
-syn match nuCmd "\<hide\>"
-syn match nuCmd "\<hide-env\>"
-syn match nuCmd "\<histogram\>"
-syn match nuCmd "\<history\>"
-syn match nuCmd "\<history session\>"
-syn match nuCmd "\<http\>"
-syn match nuCmd "\<http delete\>"
-syn match nuCmd "\<http get\>"
-syn match nuCmd "\<http head\>"
-syn match nuCmd "\<http options\>"
-syn match nuCmd "\<http patch\>"
-syn match nuCmd "\<http post\>"
-syn match nuCmd "\<http put\>"
-syn match nuCmd "\<if\>"
-syn match nuCmd "\<ignore\>"
-syn match nuCmd "\<input\>"
-syn match nuCmd "\<input list\>"
-syn match nuCmd "\<input listen\>"
-syn match nuCmd "\<insert\>"
-syn match nuCmd "\<inspect\>"
-syn match nuCmd "\<into\>"
-syn match nuCmd "\<into binary\>"
-syn match nuCmd "\<into bits\>"
-syn match nuCmd "\<into bool\>"
-syn match nuCmd "\<into datetime\>"
-syn match nuCmd "\<into duration\>"
-syn match nuCmd "\<into filesize\>"
-syn match nuCmd "\<into float\>"
-syn match nuCmd "\<into int\>"
-syn match nuCmd "\<into record\>"
-syn match nuCmd "\<into sqlite\>"
-syn match nuCmd "\<into string\>"
-syn match nuCmd "\<into value\>"
-syn match nuCmd "\<is-admin\>"
-syn match nuCmd "\<is-empty\>"
-syn match nuCmd "\<items\>"
-syn match nuCmd "\<join\>"
-syn match nuCmd "\<keybindings\>"
-syn match nuCmd "\<keybindings default\>"
-syn match nuCmd "\<keybindings list\>"
-syn match nuCmd "\<keybindings listen\>"
-syn match nuCmd "\<kill\>"
-syn match nuCmd "\<last\>"
-syn match nuCmd "\<lazy make\>"
-syn match nuCmd "\<length\>"
-syn match nuCmd "\<let\>" nextgroup=nuIdtfr skipwhite
-syn match nuCmd "\<let-env\>" nextgroup=nuIdtfr skipwhite
-syn match nuCmd "\<lines\>"
-syn match nuCmd "\<load-env\>"
-syn match nuCmd "\<loop\>"
-syn match nuCmd "\<ls\>"
-syn match nuCmd "\<match\>"
-syn match nuCmd "\<math\>"
-syn match nuCmd "\<math abs\>"
-syn match nuCmd "\<math arccos\>"
-syn match nuCmd "\<math arccosh\>"
-syn match nuCmd "\<math arcsin\>"
-syn match nuCmd "\<math arcsinh\>"
-syn match nuCmd "\<math arctan\>"
-syn match nuCmd "\<math arctanh\>"
-syn match nuCmd "\<math avg\>"
-syn match nuCmd "\<math ceil\>"
-syn match nuCmd "\<math cos\>"
-syn match nuCmd "\<math cosh\>"
-syn match nuCmd "\<math exp\>"
-syn match nuCmd "\<math floor\>"
-syn match nuCmd "\<math ln\>"
-syn match nuCmd "\<math log\>"
-syn match nuCmd "\<math max\>"
-syn match nuCmd "\<math median\>"
-syn match nuCmd "\<math min\>"
-syn match nuCmd "\<math mode\>"
-syn match nuCmd "\<math product\>"
-syn match nuCmd "\<math round\>"
-syn match nuCmd "\<math sin\>"
-syn match nuCmd "\<math sinh\>"
-syn match nuCmd "\<math sqrt\>"
-syn match nuCmd "\<math stddev\>"
-syn match nuCmd "\<math sum\>"
-syn match nuCmd "\<math tan\>"
-syn match nuCmd "\<math tanh\>"
-syn match nuCmd "\<math variance\>"
-syn match nuCmd "\<merge\>"
-syn match nuCmd "\<metadata\>"
-syn match nuCmd "\<mkdir\>"
-syn match nuCmd "\<module\>"
-syn match nuCmd "\<move\>"
-syn match nuCmd "\<mut\>" nextgroup=nuIdtfr skipwhite
-syn match nuCmd "\<mv\>"
-syn match nuCmd "\<next\>"
-syn match nuCmd "\<nu-check\>"
-syn match nuCmd "\<nu-highlight\>"
-syn match nuCmd "\<open\>"
-syn match nuCmd "\<overlay\>"
-syn match nuCmd "\<overlay hide\>"
-syn match nuCmd "\<overlay list\>"
-syn match nuCmd "\<overlay new\>"
-syn match nuCmd "\<overlay use\>"
-syn match nuCmd "\<prev\>"
-syn match nuCmd "\<par-each\>"
-syn match nuCmd "\<parse\>"
-syn match nuCmd "\<path\>"
-syn match nuCmd "\<path basename\>"
-syn match nuCmd "\<path dirname\>"
-syn match nuCmd "\<path exists\>"
-syn match nuCmd "\<path expand\>"
-syn match nuCmd "\<path join\>"
-syn match nuCmd "\<path parse\>"
-syn match nuCmd "\<path relative-to\>"
-syn match nuCmd "\<path split\>"
-syn match nuCmd "\<path type\>"
-syn match nuCmd "\<port\>"
-syn match nuCmd "\<prepend\>"
-syn match nuCmd "\<print\>"
-syn match nuCmd "\<profile\>"
-syn match nuCmd "\<ps\>"
-syn match nuCmd "\<pwd\>"
-syn match nuCmd "\<query db\>"
-syn match nuCmd "\<random\>"
-syn match nuCmd "\<random bool\>"
-syn match nuCmd "\<random chars\>"
-syn match nuCmd "\<random dice\>"
-syn match nuCmd "\<random float\>"
-syn match nuCmd "\<random int\>"
-syn match nuCmd "\<random integer\>"
-syn match nuCmd "\<random uuid\>"
-syn match nuCmd "\<range\>"
-syn match nuCmd "\<reduce\>"
-syn match nuCmd "\<register\>"
-syn match nuCmd "\<reject\>"
-syn match nuCmd "\<rename\>"
-syn match nuCmd "\<return\>"
-syn match nuCmd "\<reverse\>"
-syn match nuCmd "\<rm\>"
-syn match nuCmd "\<roll\>"
-syn match nuCmd "\<roll down\>"
-syn match nuCmd "\<roll left\>"
-syn match nuCmd "\<roll right\>"
-syn match nuCmd "\<roll up\>"
-syn match nuCmd "\<rotate\>"
-syn match nuCmd "\<run-external\>"
-syn match nuCmd "\<save\>"
-syn match nuCmd "\<schema\>"
-syn match nuCmd "\<scope\>"
-syn match nuCmd "\<scope aliases\>"
-syn match nuCmd "\<scope commands\>"
-syn match nuCmd "\<scope engine-stats\>"
-syn match nuCmd "\<scope externs\>"
-syn match nuCmd "\<scope modules\>"
-syn match nuCmd "\<scope variables\>"
-syn match nuCmd "\<select\>"
-syn match nuCmd "\<seq\>"
-syn match nuCmd "\<seq char\>"
-syn match nuCmd "\<seq date\>"
-syn match nuCmd "\<show\>"
-syn match nuCmd "\<shuffle\>"
-syn match nuCmd "\<size\>"
-syn match nuCmd "\<skip\>"
-syn match nuCmd "\<skip until\>"
-syn match nuCmd "\<skip while\>"
-syn match nuCmd "\<sleep\>"
-syn match nuCmd "\<sort\>"
-syn match nuCmd "\<sort-by\>" nextgroup=nuPrpty skipwhite
-syn match nuCmd "\<source\>"
-syn match nuCmd "\<source-env\>"
-syn match nuCmd "\<split\>"
-syn match nuCmd "\<split chars\>"
-syn match nuCmd "\<split column\>"
-syn match nuCmd "\<split list\>"
-syn match nuCmd "\<split row\>"
-syn match nuCmd "\<split words\>"
-syn match nuCmd "\<split-by\>" nextgroup=nuPrpty skipwhite
-syn match nuCmd "\<start\>"
-syn match nuCmd "\<str\>"
-syn match nuCmd "\<str camel-case\>"
-syn match nuCmd "\<str capitalize\>"
-syn match nuCmd "\<str contains\>"
-syn match nuCmd "\<str distance\>"
-syn match nuCmd "\<str downcase\>"
-syn match nuCmd "\<str ends-with\>"
-syn match nuCmd "\<str expand\>"
-syn match nuCmd "\<str index-of\>"
-syn match nuCmd "\<str join\>"
-syn match nuCmd "\<str kebab-case\>"
-syn match nuCmd "\<str length\>"
-syn match nuCmd "\<str pascal-case\>"
-syn match nuCmd "\<str replace\>"
-syn match nuCmd "\<str reverse\>"
-syn match nuCmd "\<str screaming-snake-case\>"
-syn match nuCmd "\<str snake-case\>"
-syn match nuCmd "\<str starts-with\>"
-syn match nuCmd "\<str substring\>"
-syn match nuCmd "\<str title-case\>"
-syn match nuCmd "\<str trim\>"
-syn match nuCmd "\<str upcase\>"
-syn match nuCmd "\<sys\>"
-syn match nuCmd "\<table\>"
-syn match nuCmd "\<take\>"
-syn match nuCmd "\<take until\>"
-syn match nuCmd "\<take while\>"
-syn match nuCmd "\<term size\>"
-syn match nuCmd "\<timeit\>"
-syn match nuCmd "\<to\>"
-syn match nuCmd "\<to csv\>"
-syn match nuCmd "\<to html\>"
-syn match nuCmd "\<to json\>"
-syn match nuCmd "\<to md\>"
-syn match nuCmd "\<to nuon\>"
-syn match nuCmd "\<to text\>"
-syn match nuCmd "\<to toml\>"
-syn match nuCmd "\<to tsv\>"
-syn match nuCmd "\<to xml\>"
-syn match nuCmd "\<to yaml\>"
-syn match nuCmd "\<touch\>"
-syn match nuCmd "\<transpose\>"
-syn match nuCmd "\<try\>"
-syn match nuCmd "\<tutor\>"
-syn match nuCmd "\<unfold\>"
-syn match nuCmd "\<uniq\>"
-syn match nuCmd "\<uniq-by\>"
-syn match nuCmd "\<update\>"
-syn match nuCmd "\<update cells\>"
-syn match nuCmd "\<upsert\>"
-syn match nuCmd "\<url\>"
-syn match nuCmd "\<url build-query\>"
-syn match nuCmd "\<url decode\>"
-syn match nuCmd "\<url encode\>"
-syn match nuCmd "\<url join\>"
-syn match nuCmd "\<url parse\>"
-syn match nuCmd "\<use\>"
-syn match nuCmd "\<values\>"
-syn match nuCmd "\<version\>"
-syn match nuCmd "\<view\>"
-syn match nuCmd "\<view files\>"
-syn match nuCmd "\<view source\>"
-syn match nuCmd "\<view span\>"
-syn match nuCmd "\<watch\>"
-syn match nuCmd "\<where\>" nextgroup=nuPrpty skipwhite
-syn match nuCmd "\<which\>"
-syn match nuCmd "\<while\>"
-syn match nuCmd "\<window\>"
-syn match nuCmd "\<with-env\>"
-syn match nuCmd "\<wrap\>"
-syn match nuCmd "\<zip\>"
+syn match nuCmd "\<alias\>" display
+syn match nuCmd "\<all\>" display
+syn match nuCmd "\<ansi\>" display
+syn match nuCmd "\<ansi gradient\>" display
+syn match nuCmd "\<ansi link\>" display
+syn match nuCmd "\<ansi strip\>" display
+syn match nuCmd "\<any\>" display
+syn match nuCmd "\<append\>" display
+syn match nuCmd "\<ast\>" display
+syn match nuCmd "\<banner\>" display
+syn match nuCmd "\<bits\>" display
+syn match nuCmd "\<bits and\>" display
+syn match nuCmd "\<bits not\>" display
+syn match nuCmd "\<bits or\>" display
+syn match nuCmd "\<bits rol\>" display
+syn match nuCmd "\<bits ror\>" display
+syn match nuCmd "\<bits shl\>" display
+syn match nuCmd "\<bits shr\>" display
+syn match nuCmd "\<bits xor\>" display
+syn match nuCmd "\<break\>" display
+syn match nuCmd "\<bytes\>" display
+syn match nuCmd "\<bytes add\>" display
+syn match nuCmd "\<bytes at\>" display
+syn match nuCmd "\<bytes build\>" display
+syn match nuCmd "\<bytes collect\>" display
+syn match nuCmd "\<bytes ends-with\>" display
+syn match nuCmd "\<bytes index-of\>" display
+syn match nuCmd "\<bytes length\>" display
+syn match nuCmd "\<bytes remove\>" display
+syn match nuCmd "\<bytes replace\>" display
+syn match nuCmd "\<bytes reverse\>" display
+syn match nuCmd "\<bytes starts-with\>" display
+syn match nuCmd "\<cal\>" display
+syn match nuCmd "\<cd\>" display
+syn match nuCmd "\<char\>" display
+syn match nuCmd "\<clear\>" display
+syn match nuCmd "\<collect\>" display
+syn match nuCmd "\<columns\>" display
+syn match nuCmd "\<commandline\>" display
+syn match nuCmd "\<compact\>" display
+syn match nuCmd "\<complete\>" display
+syn match nuCmd "\<config\>" display
+syn match nuCmd "\<config env\>" display
+syn match nuCmd "\<config nu\>" display
+syn match nuCmd "\<config reset\>" display
+syn match nuCmd "\<const\>" display
+syn match nuCmd "\<continue\>" display
+syn match nuCmd "\<cp\>" display
+syn match nuCmd "\<cp-old\>" display
+syn match nuCmd "\<create_left_prompt\>" display
+syn match nuCmd "\<create_right_prompt\>" display
+syn match nuCmd "\<date\>" display
+syn match nuCmd "\<date format\>" display
+syn match nuCmd "\<date humanize\>" display
+syn match nuCmd "\<date list-timezone\>" display
+syn match nuCmd "\<date now\>" display
+syn match nuCmd "\<date to-record\>" display
+syn match nuCmd "\<date to-table\>" display
+syn match nuCmd "\<date to-timezone\>" display
+syn match nuCmd "\<debug\>" display
+syn match nuCmd "\<debug info\>" display
+syn match nuCmd "\<decode\>" display
+syn match nuCmd "\<decode base64\>" display
+syn match nuCmd "\<decode hex\>" display
+syn match nuCmd "\<def\>" nextgroup=nuIdtfr,nuSubCmd skipwhite display
+syn match nuCmd "\<def-env\>" nextgroup=nuIdtfr,nuSubCmd skipwhite display
+syn match nuCmd "\<default\>" display
+syn match nuCmd "\<describe\>" display
+syn match nuCmd "\<detect columns\>" display
+syn match nuCmd "\<drop\>" display
+syn match nuCmd "\<dfr\>" display
+syn match nuCmd "\<dfr agg\>" display
+syn match nuCmd "\<dfr agg-groups\>" display
+syn match nuCmd "\<dfr all-false\>" display
+syn match nuCmd "\<dfr all-true\>" display
+syn match nuCmd "\<dfr append\>" display
+syn match nuCmd "\<dfr arg-max\>" display
+syn match nuCmd "\<dfr arg-min\>" display
+syn match nuCmd "\<dfr arg-sort\>" display
+syn match nuCmd "\<dfr arg-true\>" display
+syn match nuCmd "\<dfr arg-unique\>" display
+syn match nuCmd "\<dfr arg-where\>" display
+syn match nuCmd "\<dfr as\>" display
+syn match nuCmd "\<dfr as-date\>" display
+syn match nuCmd "\<dfr as-datetime\>" display
+syn match nuCmd "\<dfr cache\>" display
+syn match nuCmd "\<dfr col\>" display
+syn match nuCmd "\<dfr collect\>" display
+syn match nuCmd "\<dfr columns\>" display
+syn match nuCmd "\<dfr concat-str\>" display
+syn match nuCmd "\<dfr concatenate\>" display
+syn match nuCmd "\<dfr contains\>" display
+syn match nuCmd "\<dfr count\>" display
+syn match nuCmd "\<dfr count-null\>" display
+syn match nuCmd "\<dfr cumulative\>" display
+syn match nuCmd "\<dfr datepart\>" display
+syn match nuCmd "\<dfr drop\>" display
+syn match nuCmd "\<dfr drop-duplicates\>" display
+syn match nuCmd "\<dfr drop-nulls\>" display
+syn match nuCmd "\<dfr dtypes\>" display
+syn match nuCmd "\<dfr dummies\>" display
+syn match nuCmd "\<dfr explode\>" display
+syn match nuCmd "\<dfr expr-not\>" display
+syn match nuCmd "\<dfr fetch\>" display
+syn match nuCmd "\<dfr fill-nan\>" display
+syn match nuCmd "\<dfr fill-null\>" display
+syn match nuCmd "\<dfr filter\>" display
+syn match nuCmd "\<dfr filter-with\>" display
+syn match nuCmd "\<dfr first\>" display
+syn match nuCmd "\<dfr flatten\>" display
+syn match nuCmd "\<dfr get\>" display
+syn match nuCmd "\<dfr get-day\>" display
+syn match nuCmd "\<dfr get-hour\>" display
+syn match nuCmd "\<dfr get-minute\>" display
+syn match nuCmd "\<dfr get-month\>" display
+syn match nuCmd "\<dfr get-nanosecond\>" display
+syn match nuCmd "\<dfr get-ordinal\>" display
+syn match nuCmd "\<dfr get-second\>" display
+syn match nuCmd "\<dfr get-week\>" display
+syn match nuCmd "\<dfr get-weekday\>" display
+syn match nuCmd "\<dfr get-year\>" display
+syn match nuCmd "\<dfr group-by\>" display
+syn match nuCmd "\<dfr implode\>" display
+syn match nuCmd "\<dfr into-df\>" display
+syn match nuCmd "\<dfr into-lazy\>" display
+syn match nuCmd "\<dfr into-nu\>" display
+syn match nuCmd "\<dfr is-duplicated\>" display
+syn match nuCmd "\<dfr is-in\>" display
+syn match nuCmd "\<dfr is-not-null\>" display
+syn match nuCmd "\<dfr is-null\>" display
+syn match nuCmd "\<dfr is-unique\>" display
+syn match nuCmd "\<dfr join\>" display
+syn match nuCmd "\<dfr last\>" display
+syn match nuCmd "\<dfr lit\>" display
+syn match nuCmd "\<dfr lowercase\>" display
+syn match nuCmd "\<dfr ls\>" display
+syn match nuCmd "\<dfr max\>" display
+syn match nuCmd "\<dfr mean\>" display
+syn match nuCmd "\<dfr median\>" display
+syn match nuCmd "\<dfr melt\>" display
+syn match nuCmd "\<dfr min\>" display
+syn match nuCmd "\<dfr n-unique\>" display
+syn match nuCmd "\<dfr not\>" display
+syn match nuCmd "\<dfr open\>" display
+syn match nuCmd "\<dfr otherwise\>" display
+syn match nuCmd "\<dfr quantile\>" display
+syn match nuCmd "\<dfr query\>" display
+syn match nuCmd "\<dfr rename\>" display
+syn match nuCmd "\<dfr replace\>" display
+syn match nuCmd "\<dfr replace-all\>" display
+syn match nuCmd "\<dfr reverse\>" display
+syn match nuCmd "\<dfr rolling\>" display
+syn match nuCmd "\<dfr sample\>" display
+syn match nuCmd "\<dfr select\>" display
+syn match nuCmd "\<dfr set\>" display
+syn match nuCmd "\<dfr set-with-idx\>" display
+syn match nuCmd "\<dfr shape\>" display
+syn match nuCmd "\<dfr shift\>" display
+syn match nuCmd "\<dfr slice\>" display
+syn match nuCmd "\<dfr sort-by\>" display
+syn match nuCmd "\<dfr std\>" display
+syn match nuCmd "\<dfr str-lengths\>" display
+syn match nuCmd "\<dfr str-slice\>" display
+syn match nuCmd "\<dfr strftime\>" display
+syn match nuCmd "\<dfr sum\>" display
+syn match nuCmd "\<dfr summary\>" display
+syn match nuCmd "\<dfr take\>" display
+syn match nuCmd "\<dfr to-arrow\>" display
+syn match nuCmd "\<dfr to-avro\>" display
+syn match nuCmd "\<dfr to-csv\>" display
+syn match nuCmd "\<dfr to-jsonl\>" display
+syn match nuCmd "\<dfr to-parquet\>" display
+syn match nuCmd "\<dfr unique\>" display
+syn match nuCmd "\<dfr uppercase\>" display
+syn match nuCmd "\<dfr value-counts\>" display
+syn match nuCmd "\<dfr var\>" display
+syn match nuCmd "\<dfr when\>" display
+syn match nuCmd "\<dfr with-column\>" display
+syn match nuCmd "\<do\>" display
+syn match nuCmd "\<drop\>" display
+syn match nuCmd "\<drop column\>" display
+syn match nuCmd "\<drop nth\>" display
+syn match nuCmd "\<du\>" display
+syn match nuCmd "\<each\>" display
+syn match nuCmd "\<each while\>" display
+syn match nuCmd "\<echo\>" display
+syn match nuCmd "\<encode\>" display
+syn match nuCmd "\<encode base64\>" display
+syn match nuCmd "\<encode hex\>" display
+syn match nuCmd "\<add\>" display
+syn match nuCmd "\<enumerate\>" display
+syn match nuCmd "\<error make\>" display
+syn match nuCmd "\<every\>" display
+syn match nuCmd "\<exec\>" display
+syn match nuCmd "\<exit\>" display
+syn match nuCmd "\<explain\>" display
+syn match nuCmd "\<explore\>" display
+syn match nuCmd "\<export\>" display
+syn match nuCmd "\<export alias\>" display
+syn match nuCmd "\<export const\>" display
+syn match nuCmd "\<export def\>" display
+syn match nuCmd "\<export def-env\>" display
+syn match nuCmd "\<export extern\>" display
+syn match nuCmd "\<export extern-wrapped\>" display
+syn match nuCmd "\<export module\>" display
+syn match nuCmd "\<export use\>" display
+syn match nuCmd "\<export-env\>" display
+syn match nuCmd "\<extern\>" display
+syn match nuCmd "\<extern-wrapped\>" display
+syn match nuCmd "\<fill\>" display
+syn match nuCmd "\<filter\>" display
+syn match nuCmd "\<find\>" display
+syn match nuCmd "\<first\>" display
+syn match nuCmd "\<flatten\>" display
+syn match nuCmd "\<fmt\>" display
+syn match nuCmd "\<for\>" display
+syn match nuCmd "\<format\>" display
+syn match nuCmd "\<format date\>" display
+syn match nuCmd "\<format duration\>" display
+syn match nuCmd "\<format filesize\>" display
+syn match nuCmd "\<from\>" nextgroup=nuPrpty skipwhite display
+syn match nuCmd "\<from csv\>" display
+syn match nuCmd "\<from json\>" display
+syn match nuCmd "\<from nuon\>" display
+syn match nuCmd "\<from ods\>" display
+syn match nuCmd "\<from ssv\>" display
+syn match nuCmd "\<from toml\>" display
+syn match nuCmd "\<from tsv\>" display
+syn match nuCmd "\<from url\>" display
+syn match nuCmd "\<from xlsx\>" display
+syn match nuCmd "\<from xml\>" display
+syn match nuCmd "\<from yaml\>" display
+syn match nuCmd "\<from yml\>" display
+syn match nuCmd "\<goto\>" display
+syn match nuCmd "\<get\>" nextgroup=nuPrpty skipwhite display
+syn match nuCmd "\<glob\>" display
+syn match nuCmd "\<grid\>" display
+syn match nuCmd "\<group\>" display
+syn match nuCmd "\<group-by\>" display
+syn match nuCmd "\<hash\>" display
+syn match nuCmd "\<hash md5\>" display
+syn match nuCmd "\<hash sha256\>" display
+syn match nuCmd "\<headers\>" display
+syn match nuCmd "\<help\>" display
+syn match nuCmd "\<help aliases\>" display
+syn match nuCmd "\<help commands\>" display
+syn match nuCmd "\<help escapes\>" display
+syn match nuCmd "\<help externs\>" display
+syn match nuCmd "\<help modules\>" display
+syn match nuCmd "\<help operators\>" display
+syn match nuCmd "\<hide\>" display
+syn match nuCmd "\<hide-env\>" display
+syn match nuCmd "\<histogram\>" display
+syn match nuCmd "\<history\>" display
+syn match nuCmd "\<history session\>" display
+syn match nuCmd "\<http\>" display
+syn match nuCmd "\<http delete\>" display
+syn match nuCmd "\<http get\>" display
+syn match nuCmd "\<http head\>" display
+syn match nuCmd "\<http options\>" display
+syn match nuCmd "\<http patch\>" display
+syn match nuCmd "\<http post\>" display
+syn match nuCmd "\<http put\>" display
+syn match nuCmd "\<if\>" display
+syn match nuCmd "\<ignore\>" display
+syn match nuCmd "\<input\>" display
+syn match nuCmd "\<input list\>" display
+syn match nuCmd "\<input listen\>" display
+syn match nuCmd "\<insert\>" display
+syn match nuCmd "\<inspect\>" display
+syn match nuCmd "\<into\>" display
+syn match nuCmd "\<into binary\>" display
+syn match nuCmd "\<into bits\>" display
+syn match nuCmd "\<into bool\>" display
+syn match nuCmd "\<into datetime\>" display
+syn match nuCmd "\<into duration\>" display
+syn match nuCmd "\<into filesize\>" display
+syn match nuCmd "\<into float\>" display
+syn match nuCmd "\<into int\>" display
+syn match nuCmd "\<into record\>" display
+syn match nuCmd "\<into sqlite\>" display
+syn match nuCmd "\<into string\>" display
+syn match nuCmd "\<into value\>" display
+syn match nuCmd "\<is-admin\>" display
+syn match nuCmd "\<is-empty\>" display
+syn match nuCmd "\<items\>" display
+syn match nuCmd "\<join\>" display
+syn match nuCmd "\<keybindings\>" display
+syn match nuCmd "\<keybindings default\>" display
+syn match nuCmd "\<keybindings list\>" display
+syn match nuCmd "\<keybindings listen\>" display
+syn match nuCmd "\<kill\>" display
+syn match nuCmd "\<last\>" display
+syn match nuCmd "\<lazy make\>" display
+syn match nuCmd "\<length\>" display
+syn match nuCmd "\<let\>" nextgroup=nuIdtfr skipwhite display
+syn match nuCmd "\<let-env\>" nextgroup=nuIdtfr skipwhite display
+syn match nuCmd "\<lines\>" display
+syn match nuCmd "\<load-env\>" display
+syn match nuCmd "\<loop\>" display
+syn match nuCmd "\<ls\>" display
+syn match nuCmd "\<match\>" display
+syn match nuCmd "\<math\>" display
+syn match nuCmd "\<math abs\>" display
+syn match nuCmd "\<math arccos\>" display
+syn match nuCmd "\<math arccosh\>" display
+syn match nuCmd "\<math arcsin\>" display
+syn match nuCmd "\<math arcsinh\>" display
+syn match nuCmd "\<math arctan\>" display
+syn match nuCmd "\<math arctanh\>" display
+syn match nuCmd "\<math avg\>" display
+syn match nuCmd "\<math ceil\>" display
+syn match nuCmd "\<math cos\>" display
+syn match nuCmd "\<math cosh\>" display
+syn match nuCmd "\<math exp\>" display
+syn match nuCmd "\<math floor\>" display
+syn match nuCmd "\<math ln\>" display
+syn match nuCmd "\<math log\>" display
+syn match nuCmd "\<math max\>" display
+syn match nuCmd "\<math median\>" display
+syn match nuCmd "\<math min\>" display
+syn match nuCmd "\<math mode\>" display
+syn match nuCmd "\<math product\>" display
+syn match nuCmd "\<math round\>" display
+syn match nuCmd "\<math sin\>" display
+syn match nuCmd "\<math sinh\>" display
+syn match nuCmd "\<math sqrt\>" display
+syn match nuCmd "\<math stddev\>" display
+syn match nuCmd "\<math sum\>" display
+syn match nuCmd "\<math tan\>" display
+syn match nuCmd "\<math tanh\>" display
+syn match nuCmd "\<math variance\>" display
+syn match nuCmd "\<merge\>" display
+syn match nuCmd "\<metadata\>" display
+syn match nuCmd "\<mkdir\>" display
+syn match nuCmd "\<module\>" display
+syn match nuCmd "\<move\>" display
+syn match nuCmd "\<mut\>" nextgroup=nuIdtfr skipwhite display
+syn match nuCmd "\<mv\>" display
+syn match nuCmd "\<next\>" display
+syn match nuCmd "\<nu-check\>" display
+syn match nuCmd "\<nu-highlight\>" display
+syn match nuCmd "\<open\>" display
+syn match nuCmd "\<overlay\>" display
+syn match nuCmd "\<overlay hide\>" display
+syn match nuCmd "\<overlay list\>" display
+syn match nuCmd "\<overlay new\>" display
+syn match nuCmd "\<overlay use\>" display
+syn match nuCmd "\<prev\>" display
+syn match nuCmd "\<par-each\>" display
+syn match nuCmd "\<parse\>" display
+syn match nuCmd "\<path\>" display
+syn match nuCmd "\<path basename\>" display
+syn match nuCmd "\<path dirname\>" display
+syn match nuCmd "\<path exists\>" display
+syn match nuCmd "\<path expand\>" display
+syn match nuCmd "\<path join\>" display
+syn match nuCmd "\<path parse\>" display
+syn match nuCmd "\<path relative-to\>" display
+syn match nuCmd "\<path split\>" display
+syn match nuCmd "\<path type\>" display
+syn match nuCmd "\<port\>" display
+syn match nuCmd "\<prepend\>" display
+syn match nuCmd "\<print\>" display
+syn match nuCmd "\<profile\>" display
+syn match nuCmd "\<ps\>" display
+syn match nuCmd "\<pwd\>" display
+syn match nuCmd "\<query db\>" display
+syn match nuCmd "\<random\>" display
+syn match nuCmd "\<random bool\>" display
+syn match nuCmd "\<random chars\>" display
+syn match nuCmd "\<random dice\>" display
+syn match nuCmd "\<random float\>" display
+syn match nuCmd "\<random int\>" display
+syn match nuCmd "\<random integer\>" display
+syn match nuCmd "\<random uuid\>" display
+syn match nuCmd "\<range\>" display
+syn match nuCmd "\<reduce\>" display
+syn match nuCmd "\<register\>" display
+syn match nuCmd "\<reject\>" display
+syn match nuCmd "\<rename\>" display
+syn match nuCmd "\<return\>" display
+syn match nuCmd "\<reverse\>" display
+syn match nuCmd "\<rm\>" display
+syn match nuCmd "\<roll\>" display
+syn match nuCmd "\<roll down\>" display
+syn match nuCmd "\<roll left\>" display
+syn match nuCmd "\<roll right\>" display
+syn match nuCmd "\<roll up\>" display
+syn match nuCmd "\<rotate\>" display
+syn match nuCmd "\<run-external\>" display
+syn match nuCmd "\<save\>" display
+syn match nuCmd "\<schema\>" display
+syn match nuCmd "\<scope\>" display
+syn match nuCmd "\<scope aliases\>" display
+syn match nuCmd "\<scope commands\>" display
+syn match nuCmd "\<scope engine-stats\>" display
+syn match nuCmd "\<scope externs\>" display
+syn match nuCmd "\<scope modules\>" display
+syn match nuCmd "\<scope variables\>" display
+syn match nuCmd "\<select\>" display
+syn match nuCmd "\<seq\>" display
+syn match nuCmd "\<seq char\>" display
+syn match nuCmd "\<seq date\>" display
+syn match nuCmd "\<show\>" display
+syn match nuCmd "\<shuffle\>" display
+syn match nuCmd "\<size\>" display
+syn match nuCmd "\<skip\>" display
+syn match nuCmd "\<skip until\>" display
+syn match nuCmd "\<skip while\>" display
+syn match nuCmd "\<sleep\>" display
+syn match nuCmd "\<sort\>" display
+syn match nuCmd "\<sort-by\>" nextgroup=nuPrpty skipwhite display
+syn match nuCmd "\<source\>" display
+syn match nuCmd "\<source-env\>" display
+syn match nuCmd "\<split\>" display
+syn match nuCmd "\<split chars\>" display
+syn match nuCmd "\<split column\>" display
+syn match nuCmd "\<split list\>" display
+syn match nuCmd "\<split row\>" display
+syn match nuCmd "\<split words\>" display
+syn match nuCmd "\<split-by\>" nextgroup=nuPrpty skipwhite display
+syn match nuCmd "\<start\>" display
+syn match nuCmd "\<str\>" display
+syn match nuCmd "\<str camel-case\>" display
+syn match nuCmd "\<str capitalize\>" display
+syn match nuCmd "\<str contains\>" display
+syn match nuCmd "\<str distance\>" display
+syn match nuCmd "\<str downcase\>" display
+syn match nuCmd "\<str ends-with\>" display
+syn match nuCmd "\<str expand\>" display
+syn match nuCmd "\<str index-of\>" display
+syn match nuCmd "\<str join\>" display
+syn match nuCmd "\<str kebab-case\>" display
+syn match nuCmd "\<str length\>" display
+syn match nuCmd "\<str pascal-case\>" display
+syn match nuCmd "\<str replace\>" display
+syn match nuCmd "\<str reverse\>" display
+syn match nuCmd "\<str screaming-snake-case\>" display
+syn match nuCmd "\<str snake-case\>" display
+syn match nuCmd "\<str starts-with\>" display
+syn match nuCmd "\<str substring\>" display
+syn match nuCmd "\<str title-case\>" display
+syn match nuCmd "\<str trim\>" display
+syn match nuCmd "\<str upcase\>" display
+syn match nuCmd "\<sys\>" display
+syn match nuCmd "\<table\>" display
+syn match nuCmd "\<take\>" display
+syn match nuCmd "\<take until\>" display
+syn match nuCmd "\<take while\>" display
+syn match nuCmd "\<term size\>" display
+syn match nuCmd "\<timeit\>" display
+syn match nuCmd "\<to\>" display
+syn match nuCmd "\<to csv\>" display
+syn match nuCmd "\<to html\>" display
+syn match nuCmd "\<to json\>" display
+syn match nuCmd "\<to md\>" display
+syn match nuCmd "\<to nuon\>" display
+syn match nuCmd "\<to text\>" display
+syn match nuCmd "\<to toml\>" display
+syn match nuCmd "\<to tsv\>" display
+syn match nuCmd "\<to xml\>" display
+syn match nuCmd "\<to yaml\>" display
+syn match nuCmd "\<touch\>" display
+syn match nuCmd "\<transpose\>" display
+syn match nuCmd "\<try\>" display
+syn match nuCmd "\<tutor\>" display
+syn match nuCmd "\<unfold\>" display
+syn match nuCmd "\<uniq\>" display
+syn match nuCmd "\<uniq-by\>" display
+syn match nuCmd "\<update\>" display
+syn match nuCmd "\<update cells\>" display
+syn match nuCmd "\<upsert\>" display
+syn match nuCmd "\<url\>" display
+syn match nuCmd "\<url build-query\>" display
+syn match nuCmd "\<url decode\>" display
+syn match nuCmd "\<url encode\>" display
+syn match nuCmd "\<url join\>" display
+syn match nuCmd "\<url parse\>" display
+syn match nuCmd "\<use\>" display
+syn match nuCmd "\<values\>" display
+syn match nuCmd "\<version\>" display
+syn match nuCmd "\<view\>" display
+syn match nuCmd "\<view files\>" display
+syn match nuCmd "\<view source\>" display
+syn match nuCmd "\<view span\>" display
+syn match nuCmd "\<watch\>" display
+syn match nuCmd "\<where\>" nextgroup=nuPrpty skipwhite display
+syn match nuCmd "\<which\>" display
+syn match nuCmd "\<while\>" display
+syn match nuCmd "\<window\>" display
+syn match nuCmd "\<with-env\>" display
+syn match nuCmd "\<wrap\>" display
+syn match nuCmd "\<zip\>" display
 
-syn match nuCmd "\<exists\>"
+syn match nuCmd "\<exists\>" display
 
 syn keyword nuTodo contained TODO FIXME NOTE
 syn match nuComment "#.*$" contains=nuTodo
 
-syn match nuOp "<"
-syn match nuOp ">"
-syn match nuOp "+"
-syn match nuOp "/"
-syn match nuOp "\*"
-syn match nuOp "!="
-syn match nuOp "\v\=\~"
-syn match nuOp "\v!\~"
-syn match nuOp "\<in\>" nextgroup=nuPrpty skipwhite
-syn match nuOp "\<not-in\>" nextgroup=nuPrpty skipwhite
-syn match nuOp "\<not\>"
-syn match nuOp "\<and\>" nextgroup=nuPrpty skipwhite
-syn match nuOp "\<or\>" nextgroup=nuPrpty skipwhite
-syn match nuOp "\<xor\>" nextgroup=nuPrpty skipwhite
-syn match nuOp "\<bit-or\>"
-syn match nuOp "\<bit-xor\>"
-syn match nuOp "\<bit-and\>"
-syn match nuOp "\<bit-shl\>"
-syn match nuOp "\<bit-shr\>"
-syn match nuOp "\<starts-with\>"
-syn match nuOp "\<ends-with\>"
-syn match nuOp "="
-syn match nuOp "-"
-syn match nuOp "?"
+syn match nuOp "<" display
+syn match nuOp ">" display
+syn match nuOp "+" display
+syn match nuOp "/" display
+syn match nuOp "\*" display
+syn match nuOp "!=" display
+syn match nuOp "\v\=\~" display
+syn match nuOp "\v!\~" display
+syn match nuOp "\<in\>" nextgroup=nuPrpty skipwhite display
+syn match nuOp "\<not-in\>" nextgroup=nuPrpty skipwhite display
+syn match nuOp "\<not\>" display
+syn match nuOp "\<and\>" nextgroup=nuPrpty skipwhite display
+syn match nuOp "\<or\>" nextgroup=nuPrpty skipwhite display
+syn match nuOp "\<xor\>" nextgroup=nuPrpty skipwhite display
+syn match nuOp "\<bit-or\>" display
+syn match nuOp "\<bit-xor\>" display
+syn match nuOp "\<bit-and\>" display
+syn match nuOp "\<bit-shl\>" display
+syn match nuOp "\<bit-shr\>" display
+syn match nuOp "\<starts-with\>" display
+syn match nuOp "\<ends-with\>" display
+syn match nuOp "=" display
+syn match nuOp "-" display
+syn match nuOp "?" display
 
 syn match nuVar "\$[^?\])} \t]\+"
 
-syn match nuSqrbr "\v\["
-syn match nuSqrbr "\v\]"
-syn match nuSqrbr ":"
+syn match nuSqrbr "\v\[" display
+syn match nuSqrbr "\v\]" display
+syn match nuSqrbr ":" display
 
 syn match nuIdtfr :[^? \t"=]\+: contained
 
@@ -575,6 +575,8 @@ syn match nuDur "wk\>"
 
 syn match nuFlag "\<-\k\+"
 
+syn match nuSysEsc "\^\k\+"
+
 syn match nuNumber "[^a-zA-Z_]\d\+"
 syn match nuNumber "[^a-zA-Z_]\d\+\.\d\+"
 syn match nuNumber "[^a-zA-Z_]\d\+[eE]\d\+"
@@ -589,14 +591,17 @@ syn region nuStrInt start=/$"/ skip=/\\./ end=/"/ contains=nuNested,nuEscaped
 
 syn region nuNested start="("hs=s+1 end=")"he=e-1 contained
 
-syn match nuClosure "|\(\w\|, \)\+|" 
+syn match nuClosure "|\(\w\|, \)\+|"
 
-syn match nuEscaped "\\n"
-syn match nuEscaped "\\t"
-syn match nuEscaped "\\x.\+m"
-syn match nuEscaped "\\r"
-syn match nuEscaped "\\x"
-syn match nuEscaped :\\":
+syn match nuDot ")\.\(\k\|\.\)\+"ms=s+1 display
+
+syn match nuEscaped "\\\\" display
+syn match nuEscaped :\\": display
+syn match nuEscaped "\\n" display
+syn match nuEscaped "\\t" display
+syn match nuEscaped "\\r" display
+
+syn match nuExternal '\^\w ' display
 
 let b:current_syntax = "nu"
 
@@ -621,3 +626,5 @@ hi def link nuEscaped	Special
 hi def link nuCondi	Type
 hi def link nuClosure	Type
 hi def link nuNumber	Number
+hi def link nuDot	Special
+hi def link nuSysEsc	PreProc
