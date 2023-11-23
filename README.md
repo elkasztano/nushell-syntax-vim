@@ -4,7 +4,7 @@ Nushell syntax highlighting and indentation for Vim
 ## Installation
 * create the ~/.vim directory and required subdirectories if they do not already exist
 ```
-mkdir -p ~/.vim/ftdetect && mkdir -p ~/.vim/ftplugin && mkdir -p ~/.vim/syntax
+mkdir -p ~/.vim/ftdetect && mkdir -p ~/.vim/ftplugin && mkdir -p ~/.vim/syntax && mkdir -p ~/.vim/indent
 ```
 
 * copy the .vim-files to their corresponding directories in ~/.vim
@@ -13,17 +13,17 @@ mkdir -p ~/.vim/ftdetect && mkdir -p ~/.vim/ftplugin && mkdir -p ~/.vim/syntax
 ## Installation using Nushell script (experimental)
 * requires 'nu' to be in your PATH
 * use at your own risk
-* tested with Nushell 0.86.0 on Debian 12
+* tested with Nushell 0.87.1 on Debian 12 and Windows 11
 
 ```
 git clone "https://github.com/elkasztano/nushell-syntax-vim"
 cd nushell-syntax-vim
-nu ./install.nu
+nu install.nu
 ```
 
 to uninstall navigate to the 'nushell-syntax-vim' directory, then type
 ```
-nu ./uninstall.nu
+nu uninstall.nu
 ```
 
 ## Notes
