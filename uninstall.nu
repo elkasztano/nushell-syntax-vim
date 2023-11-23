@@ -1,34 +1,59 @@
 # nushell syntax uninstall script
 # use at your own risk
 
-let system_os = (sys).host.name
+let system_os = (sys).host.long_os_version
 
-if not ($system_os ends-with "GNU/Linux") {
-  print $"your system: '($system_os)'"
-  print "currently only GNU/Linux systems supported - exiting"
+if ($system_os starts-with "Linux") {
+
+  let vimdir = $"($env.HOME)/.vim"
+  
+  let filelist = [
+    $"($vimdir)/syntax/nu.vim",
+    $"($vimdir)/indent/nu.vim",
+    $"($vimdir)/ftdetect/nu.vim",
+    $"($vimdir)/ftplugin/nu.vim"
+  ]
+
+  uninstall $vimdir $filelist
+
+} else if ($system_os starts-with "Windows") {
+
+  let homedir = $"($env.HOMEDRIVE)($env.HOMEPATH)"
+
+  let vimdir = $"($homedir)\\vimfiles"
+
+  let filelist = [
+    $"($vimdir)\\syntax\\nu.vim",
+    $"($vimdir)\\indent\\nu.vim",
+    $"($vimdir)\\ftdetect\\nu.vim",
+    $"($vimdir)\\ftplugin\\nu.vim"
+  ]
+
+  uninstall $vimdir $filelist
+
+} else {
+  print $"(ansi -e '0;33;1m')currently only Linux or Windows systems supported(ansi -e '0m')"
+  print "please remove the files manually"
   exit 1
 }
 
-let vimdir = $"($env.HOME)/.vim"
+def uninstall [vimdir, filelist] {
 
-if not ( $vimdir | path exists ) {
-  print $"'($vimdir)' does not exist"
-  print "nothing to uninstall - exiting"
-  exit 1
-}
-
-let dirlist = [ "syntax", "ftplugin", "ftdetect" ]
-
-$dirlist | each {
-  |it|
-  let fullpath = $"($env.HOME)/.vim/($it)/nu.vim"
-  if ( $fullpath | path exists ) {
-    rm --interactive $fullpath
-  } else {
-    print $"file (ansi -e '0;1m')'($fullpath)'(ansi -e '0m') not found"
-    print "no file means nothing to remove\n"
+  if not ( $vimdir | path exists ) {
+    print $"'($vimdir)' does not exist"
+    print "nothing to uninstall - exiting"
+    exit 0
   }
 
+  $filelist | each {
+    |it|
+    if ( $it | path exists ) {
+      rm --interactive $it
+    } else {
+      print $"file (ansi -e '0;1m')'($it)'(ansi -e '0m') not found"
+      print "no file means nothing to remove\n"
+    }
+  }
 }
 
 print ""
