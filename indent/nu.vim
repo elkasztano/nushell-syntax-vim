@@ -1,7 +1,7 @@
 " Vim indent file
 " Language: Nushell
-" Maintainer: ElKasztano
-" Last Updated: 2023 Nov 23
+" Maintainer: El Kasztano
+" Last Updated: 23 November 2023
 
 " Only load if no other indent file is loaded
 if exists('b:did_indent') | finish | endif
