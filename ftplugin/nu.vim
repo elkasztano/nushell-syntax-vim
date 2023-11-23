@@ -1,1 +1,2 @@
-setlocal autoindent smartindent shiftwidth=2 softtabstop=2 expandtab
+setlocal commentstring=#%s
+setlocal formatoptions=tcroql
