@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Nushell
 " Maintainer: El Kasztano
-" Latest Revision: 25 November 2023
+" Latest Revision: 26 November 2023
 
 if exists("b:current_syntax")
 	finish
@@ -579,7 +579,7 @@ syn match nuFlag "\<-\k\+"
 syn match nuDefflag "\<--env\>" display contained nextgroup=nuIdtfr skipwhite
 syn match nuDefflag "\<--wrapped\>" display contained nextgroup=nuIdtfr skipwhite
 
-syn match nuSysEsc "\^\k\+"
+syn match nuSysEsc "\^\k\+" display
 
 syn match nuNumber "[^a-zA-Z_]\d\+" nextgroup=nuUnit,nuDur
 syn match nuNumber "[^a-zA-Z_]\d\+\.\d\+" nextgroup=nuUnit,nuDur
@@ -605,8 +605,6 @@ syn match nuEscaped :\\": display
 syn match nuEscaped "\\n" display
 syn match nuEscaped "\\t" display
 syn match nuEscaped "\\r" display
-
-syn match nuExternal '\^\w ' display
 
 let b:current_syntax = "nu"
 
