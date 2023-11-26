@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Nushell
 " Maintainer: El Kasztano
-" Latest Revision: 19 November 2023
+" Latest Revision: 25 November 2023
 
 if exists("b:current_syntax")
 	finish
@@ -54,7 +54,7 @@ syn match nuCmd "\<config\>" display
 syn match nuCmd "\<config env\>" display
 syn match nuCmd "\<config nu\>" display
 syn match nuCmd "\<config reset\>" display
-syn match nuCmd "\<const\>" display
+syn match nuCmd "\<const\>" nextgroup=nuIdtfr,nuSubCmd,nuDefflag skipwhite display
 syn match nuCmd "\<continue\>" display
 syn match nuCmd "\<cp\>" display
 syn match nuCmd "\<cp-old\>" display
@@ -73,8 +73,8 @@ syn match nuCmd "\<debug info\>" display
 syn match nuCmd "\<decode\>" display
 syn match nuCmd "\<decode base64\>" display
 syn match nuCmd "\<decode hex\>" display
-syn match nuCmd "\<def\>" nextgroup=nuIdtfr,nuSubCmd skipwhite display
-syn match nuCmd "\<def-env\>" nextgroup=nuIdtfr,nuSubCmd skipwhite display
+syn match nuCmd "\<def\>" nextgroup=nuIdtfr,nuSubCmd,nuDefflag skipwhite display
+syn match nuCmd "\<def-env\>" nextgroup=nuIdtfr,nuSubCmd,nuDefflag skipwhite display
 syn match nuCmd "\<default\>" display
 syn match nuCmd "\<describe\>" display
 syn match nuCmd "\<detect columns\>" display
@@ -208,12 +208,12 @@ syn match nuCmd "\<explain\>" display
 syn match nuCmd "\<explore\>" display
 syn match nuCmd "\<export\>" display
 syn match nuCmd "\<export alias\>" display
-syn match nuCmd "\<export const\>" display
-syn match nuCmd "\<export def\>" display
-syn match nuCmd "\<export def-env\>" display
-syn match nuCmd "\<export extern\>" display
-syn match nuCmd "\<export extern-wrapped\>" display
-syn match nuCmd "\<export module\>" display
+syn match nuCmd "\<export const\>" nextgroup=nuIdtfr skipwhite display
+syn match nuCmd "\<export def\>" nextgroup=nuIdtfr skipwhite display
+syn match nuCmd "\<export def-env\>" nextgroup=nuIdtfr skipwhite display
+syn match nuCmd "\<export extern\>" nextgroup=nuIdtfr skipwhite display
+syn match nuCmd "\<export extern-wrapped\>" nextgroup=nuIdtfr skipwhite display
+syn match nuCmd "\<export module\>" nextgroup=nuIdtfr skipwhite display
 syn match nuCmd "\<export use\>" display
 syn match nuCmd "\<export-env\>" display
 syn match nuCmd "\<extern\>" display
@@ -247,7 +247,7 @@ syn match nuCmd "\<get\>" nextgroup=nuPrpty skipwhite display
 syn match nuCmd "\<glob\>" display
 syn match nuCmd "\<grid\>" display
 syn match nuCmd "\<group\>" display
-syn match nuCmd "\<group-by\>" display
+syn match nuCmd "\<group-by\>" nextgroup=nuPrpty skipwhite display
 syn match nuCmd "\<hash\>" display
 syn match nuCmd "\<hash md5\>" display
 syn match nuCmd "\<hash sha256\>" display
@@ -344,7 +344,7 @@ syn match nuCmd "\<math variance\>" display
 syn match nuCmd "\<merge\>" display
 syn match nuCmd "\<metadata\>" display
 syn match nuCmd "\<mkdir\>" display
-syn match nuCmd "\<module\>" display
+syn match nuCmd "\<module\>" nextgroup=nuIdtfr skipwhite display
 syn match nuCmd "\<move\>" display
 syn match nuCmd "\<mut\>" nextgroup=nuIdtfr skipwhite display
 syn match nuCmd "\<mv\>" display
@@ -356,7 +356,7 @@ syn match nuCmd "\<overlay\>" display
 syn match nuCmd "\<overlay hide\>" display
 syn match nuCmd "\<overlay list\>" display
 syn match nuCmd "\<overlay new\>" display
-syn match nuCmd "\<overlay use\>" display
+syn match nuCmd "\<overlay use\>" nextgroup=nuIdtfr skipwhite display
 syn match nuCmd "\<prev\>" display
 syn match nuCmd "\<par-each\>" display
 syn match nuCmd "\<parse\>" display
@@ -478,7 +478,7 @@ syn match nuCmd "\<try\>" display
 syn match nuCmd "\<tutor\>" display
 syn match nuCmd "\<unfold\>" display
 syn match nuCmd "\<uniq\>" display
-syn match nuCmd "\<uniq-by\>" display
+syn match nuCmd "\<uniq-by\>" nextgroup=nuPrpty skipwhite display
 syn match nuCmd "\<update\>" display
 syn match nuCmd "\<update cells\>" display
 syn match nuCmd "\<upsert\>" display
@@ -488,7 +488,7 @@ syn match nuCmd "\<url decode\>" display
 syn match nuCmd "\<url encode\>" display
 syn match nuCmd "\<url join\>" display
 syn match nuCmd "\<url parse\>" display
-syn match nuCmd "\<use\>" display
+syn match nuCmd "\<use\>" nextgroup=nuIdtfr skipwhite display
 syn match nuCmd "\<values\>" display
 syn match nuCmd "\<version\>" display
 syn match nuCmd "\<view\>" display
@@ -499,6 +499,7 @@ syn match nuCmd "\<watch\>" display
 syn match nuCmd "\<where\>" nextgroup=nuPrpty skipwhite display
 syn match nuCmd "\<which\>" display
 syn match nuCmd "\<while\>" display
+syn match nuCmd "\<whoami\>" display
 syn match nuCmd "\<window\>" display
 syn match nuCmd "\<with-env\>" display
 syn match nuCmd "\<wrap\>" display
@@ -540,7 +541,7 @@ syn match nuSqrbr "\v\[" display
 syn match nuSqrbr "\v\]" display
 syn match nuSqrbr ":" display
 
-syn match nuIdtfr :[^? \t"=]\+: contained
+syn match nuIdtfr :\(-\+\)\@![^? \t"=]\+: contained
 
 syn region nuSubCmd start=/"/ skip=/\\./ end=/"/ contained
 
@@ -550,37 +551,40 @@ syn keyword nuType any binary bool cell-path closure datetime directory duration
 
 syn keyword nuCondi if then else
 
-syn match nuUnit "b\>"
-syn match nuUnit "kb\>"
-syn match nuUnit "mb\>"
-syn match nuUnit "gb\>"
-syn match nuUnit "tb\>"
-syn match nuUnit "pb\>"
-syn match nuUnit "eb\>"
-syn match nuUnit "kib\>"
-syn match nuUnit "mib\>"
-syn match nuUnit "gib\>"
-syn match nuUnit "tib\>"
-syn match nuUnit "pib\>"
-syn match nuUnit "eib\>"
+syn match nuUnit "b\>" contained
+syn match nuUnit "kb\>" contained
+syn match nuUnit "mb\>" contained
+syn match nuUnit "gb\>" contained
+syn match nuUnit "tb\>" contained
+syn match nuUnit "pb\>" contained
+syn match nuUnit "eb\>" contained
+syn match nuUnit "kib\>" contained
+syn match nuUnit "mib\>" contained
+syn match nuUnit "gib\>" contained
+syn match nuUnit "tib\>" contained
+syn match nuUnit "pib\>" contained
+syn match nuUnit "eib\>" contained
 
-syn match nuDur "ns\>"
-syn match nuDur "us\>"
-syn match nuDur "ms\>"
-syn match nuDur "sec\>"
-syn match nuDur "min\>"
-syn match nuDur "hr\>"
-syn match nuDur "day\>"
-syn match nuDur "wk\>"
+syn match nuDur "ns\>" contained
+syn match nuDur "us\>" contained
+syn match nuDur "ms\>" contained
+syn match nuDur "sec\>" contained
+syn match nuDur "min\>" contained
+syn match nuDur "hr\>" contained
+syn match nuDur "day\>" contained
+syn match nuDur "wk\>" contained
 
 syn match nuFlag "\<-\k\+"
 
+syn match nuDefflag "\<--env\>" display contained nextgroup=nuIdtfr skipwhite
+syn match nuDefflag "\<--wrapped\>" display contained nextgroup=nuIdtfr skipwhite
+
 syn match nuSysEsc "\^\k\+"
 
-syn match nuNumber "[^a-zA-Z_]\d\+"
-syn match nuNumber "[^a-zA-Z_]\d\+\.\d\+"
-syn match nuNumber "[^a-zA-Z_]\d\+[eE]\d\+"
-syn match nuNumber "[^a-zA-Z_]\d\+\.\d\+[eE]\d\+"
+syn match nuNumber "[^a-zA-Z_]\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "[^a-zA-Z_]\d\+\.\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "[^a-zA-Z_]\d\+[eE]\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "[^a-zA-Z_]\d\+\.\d\+[eE]\d\+" nextgroup=nuUnit,nuDur
 
 syn region nuString start=/\v"/ skip=/\v\\./ end=/\v"/ contains=nuEscaped
 syn region nuString start='\'' end='\''
@@ -589,7 +593,8 @@ syn region nuString start='`' end='`'
 syn region nuStrInt start=/$'/ end=/'/ contains=nuNested
 syn region nuStrInt start=/$"/ skip=/\\./ end=/"/ contains=nuNested,nuEscaped
 
-syn region nuNested start="("hs=s+1 end=")"he=e-1 contained
+syn region nuNested start="("hs=s+1 end=")"he=e-1 contained contains=nuAnsi
+syn match nuAnsi "ansi[a-zA-Z0-9;' -]\+)"me=e-1 contained
 
 syn match nuClosure "|\(\w\|, \)\+|"
 
@@ -628,3 +633,5 @@ hi def link nuClosure	Type
 hi def link nuNumber	Number
 hi def link nuDot	Special
 hi def link nuSysEsc	PreProc
+hi def link nuAnsi	Special
+hi def link nuDefflag	Special
