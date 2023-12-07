@@ -1,14 +1,14 @@
 " Vim indent file
 " Language: Nushell
 " Maintainer: El Kasztano
-" Last Updated: 23 November 2023
+" Last Updated: 07 December 2023
 
 " Only load if no other indent file is loaded
 if exists('b:did_indent') | finish | endif
 let b:did_indent = 1
 
 setlocal cindent
-setlocal cinoptions=L0,(s,Ws,J1,j1,+0,f5,m1
+setlocal cinoptions=L0,(s,Ws,J1,j1,+0,f5,m1,i0
 setlocal cinkeys=0{,0},!^F,o,O,0[,0],0),0#
 
 setlocal autoindent
