@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Nushell
 " Maintainer: El Kasztano
-" Latest Revision: 26 November 2023
+" Latest Revision: 07 December 2023
 
 if exists("b:current_syntax")
 	finish
@@ -510,14 +510,17 @@ syn match nuCmd "\<exists\>" display
 syn keyword nuTodo contained TODO FIXME NOTE
 syn match nuComment "#.*$" contains=nuTodo
 
+syn match nuOp "=" display
+syn match nuOp "-" display
+syn match nuOp "?" display
 syn match nuOp "<" display
 syn match nuOp ">" display
 syn match nuOp "+" display
 syn match nuOp "/" display
 syn match nuOp "\*" display
 syn match nuOp "!=" display
-syn match nuOp "\v\=\~" display
-syn match nuOp "\v!\~" display
+syn match nuOp "=\~" display
+syn match nuOp "\!\~" display
 syn match nuOp "\<in\>" nextgroup=nuPrpty skipwhite display
 syn match nuOp "\<not-in\>" nextgroup=nuPrpty skipwhite display
 syn match nuOp "\<not\>" display
@@ -531,9 +534,6 @@ syn match nuOp "\<bit-shl\>" display
 syn match nuOp "\<bit-shr\>" display
 syn match nuOp "\<starts-with\>" display
 syn match nuOp "\<ends-with\>" display
-syn match nuOp "=" display
-syn match nuOp "-" display
-syn match nuOp "?" display
 
 syn match nuVar "\$[^?\])} \t]\+"
 
