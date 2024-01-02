@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Nushell
 " Maintainer: El Kasztano
-" Latest Revision: 07 December 2023
+" Latest Revision: 02 January 2024
 
 if exists("b:current_syntax")
 	finish
@@ -534,12 +534,9 @@ syn match nuOp "\<bit-shl\>" display
 syn match nuOp "\<bit-shr\>" display
 syn match nuOp "\<starts-with\>" display
 syn match nuOp "\<ends-with\>" display
+syn match nuOp "\.\.\." display
 
 syn match nuVar "\$[^?\])} \t]\+"
-
-syn match nuSqrbr "\v\[" display
-syn match nuSqrbr "\v\]" display
-syn match nuSqrbr ":" display
 
 syn match nuIdtfr :\(-\+\)\@![^? \t"=]\+: contained
 
@@ -581,10 +578,15 @@ syn match nuDefflag "\<--wrapped\>" display contained nextgroup=nuIdtfr skipwhit
 
 syn match nuSysEsc "\^\k\+" display
 
-syn match nuNumber "[^a-zA-Z_]\d\+" nextgroup=nuUnit,nuDur
-syn match nuNumber "[^a-zA-Z_]\d\+\.\d\+" nextgroup=nuUnit,nuDur
-syn match nuNumber "[^a-zA-Z_]\d\+[eE]\d\+" nextgroup=nuUnit,nuDur
-syn match nuNumber "[^a-zA-Z_]\d\+\.\d\+[eE]\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "-\?\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "-\?\d\+\." nextgroup=nuUnit,nuDur
+syn match nuNumber "-\?\.\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "-\?\d\+[eE]\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "-\?\d\+\.\d\+[eE]\d\+" nextgroup=nuUnit,nuDur
+
+syn match nuSqrbr "\[" display
+syn match nuSqrbr "\]" display
+syn match nuSqrbr ":" display
 
 syn region nuString start=/\v"/ skip=/\v\\./ end=/\v"/ contains=nuEscaped
 syn region nuString start='\'' end='\''
