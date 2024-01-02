@@ -507,6 +507,12 @@ syn match nuCmd "\<zip\>" display
 
 syn match nuCmd "\<exists\>" display
 
+syn match nuNumber "[^a-zA-Z_]-\?\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "[^a-zA-Z_]-\?\d\+\." nextgroup=nuUnit,nuDur
+syn match nuNumber "[^a-zA-Z_]-\?\.\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "[^a-zA-Z_]-\?\d\+[eE]\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "[^a-zA-Z_]-\?\d\+\.\d\+[eE]\d\+" nextgroup=nuUnit,nuDur
+
 syn keyword nuTodo contained TODO FIXME NOTE
 syn match nuComment "#.*$" contains=nuTodo
 
@@ -577,12 +583,6 @@ syn match nuDefflag "\<--env\>" display contained nextgroup=nuIdtfr skipwhite
 syn match nuDefflag "\<--wrapped\>" display contained nextgroup=nuIdtfr skipwhite
 
 syn match nuSysEsc "\^\k\+" display
-
-syn match nuNumber "-\?\d\+" nextgroup=nuUnit,nuDur
-syn match nuNumber "-\?\d\+\." nextgroup=nuUnit,nuDur
-syn match nuNumber "-\?\.\d\+" nextgroup=nuUnit,nuDur
-syn match nuNumber "-\?\d\+[eE]\d\+" nextgroup=nuUnit,nuDur
-syn match nuNumber "-\?\d\+\.\d\+[eE]\d\+" nextgroup=nuUnit,nuDur
 
 syn match nuSqrbr "\[" display
 syn match nuSqrbr "\]" display
