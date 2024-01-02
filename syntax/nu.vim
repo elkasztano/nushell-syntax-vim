@@ -507,11 +507,11 @@ syn match nuCmd "\<zip\>" display
 
 syn match nuCmd "\<exists\>" display
 
-syn match nuNumber "[^a-zA-Z_]-\?\d\+" nextgroup=nuUnit,nuDur
-syn match nuNumber "[^a-zA-Z_]-\?\d\+\." nextgroup=nuUnit,nuDur
-syn match nuNumber "[^a-zA-Z_]-\?\.\d\+" nextgroup=nuUnit,nuDur
-syn match nuNumber "[^a-zA-Z_]-\?\d\+[eE]\d\+" nextgroup=nuUnit,nuDur
-syn match nuNumber "[^a-zA-Z_]-\?\d\+\.\d\+[eE]\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "\([a-zA-Z_]\+[0-9]*\)\@<!\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "\d\+\." nextgroup=nuUnit,nuDur
+syn match nuNumber "\.\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "\d\+[eE][+-]\?\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "\d\+\.\d\+[eE]\?[+-]\d\+" nextgroup=nuUnit,nuDur
 
 syn keyword nuTodo contained TODO FIXME NOTE
 syn match nuComment "#.*$" contains=nuTodo
