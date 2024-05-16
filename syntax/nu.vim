@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Nushell
 " Maintainer: El Kasztano
-" Latest Revision: 02 January 2024
+" Latest Revision: 16 May 2024
 
 if exists("b:current_syntax")
 	finish
@@ -507,9 +507,9 @@ syn match nuCmd "\<zip\>" display
 
 syn match nuCmd "\<exists\>" display
 
-syn match nuNumber "\([a-zA-Z_]\+[0-9]*\)\@<!\d\+" nextgroup=nuUnit,nuDur
-syn match nuNumber "\d\+\." nextgroup=nuUnit,nuDur
-syn match nuNumber "\.\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "\([a-zA-Z_\.]\+\d*\)\@<!\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "\([a-zA-Z]\)\@<!\.\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "\([a-zA-Z]\)\@<!_\d\+" nextgroup=nuUnit,nuDur,nuNumber
 syn match nuNumber "\d\+[eE][+-]\?\d\+" nextgroup=nuUnit,nuDur
 syn match nuNumber "\d\+\.\d\+[eE]\?[+-]\d\+" nextgroup=nuUnit,nuDur
 
