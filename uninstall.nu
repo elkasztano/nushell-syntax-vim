@@ -1,7 +1,7 @@
 # nushell syntax uninstall script
 # use at your own risk
 
-let system_os = (sys).host.long_os_version
+let system_os = (sys host).long_os_version
 
 if ($system_os starts-with "Linux") {
 

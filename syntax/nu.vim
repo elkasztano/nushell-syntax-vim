@@ -455,6 +455,13 @@ syn match nuCmd "\<str title-case\>" display
 syn match nuCmd "\<str trim\>" display
 syn match nuCmd "\<str upcase\>" display
 syn match nuCmd "\<sys\>" display
+syn match nuCmd "\<sys cpu\>" display
+syn match nuCmd "\<sys disks\>" display
+syn match nuCmd "\<sys host\>" display
+syn match nuCmd "\<sys mem\>" display
+syn match nuCmd "\<sys net\>" display
+syn match nuCmd "\<sys temp\>" display
+syn match nuCmd "\<sys users\>" display
 syn match nuCmd "\<table\>" display
 syn match nuCmd "\<take\>" display
 syn match nuCmd "\<take until\>" display

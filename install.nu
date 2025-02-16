@@ -2,7 +2,7 @@
 # this is my very first nushell script
 # use at your own risk
 
-let system_os = (sys).host.long_os_version
+let system_os = (sys host).long_os_version
 
 print $"your system: '($system_os)'"
 
