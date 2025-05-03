@@ -16,11 +16,11 @@ mkdir -p ~/.vim/indent
 ## Installation using Nushell script (experimental)
 * requires 'nu' to be in your PATH
 * use at your own risk
-* tested with Nushell 0.88.1 on Debian 12 and Windows 11
+* tested with Nushell 0.104.0 on Debian 12 and Windows 11
 
 ```
-git clone "https://github.com/elkasztano/nushell-syntax-vim"
-cd nushell-syntax-vim
+git clone "https://github.com/elkasztano/nushell-syntax-vim" && \
+cd nushell-syntax-vim && \
 nu install.nu
 ```
 
