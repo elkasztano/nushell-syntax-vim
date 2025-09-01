@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Nushell
 " Maintainer: El Kasztano
-" Latest Revision: 16 Feb 2025
+" Latest Revision: 01 Sep 2025
 
 if exists("b:current_syntax")
 	finish
@@ -598,6 +598,7 @@ syn match nuSqrbr ":" display
 syn region nuString start=/\v"/ skip=/\v\\./ end=/\v"/ contains=nuEscaped
 syn region nuString start='\'' end='\''
 syn region nuString start='`' end='`'
+syn region nuString start=/r#\+'/ end=/'#\+[^']*$/
 
 syn region nuStrInt start=/$'/ end=/'/ contains=nuNested
 syn region nuStrInt start=/$"/ skip=/\\./ end=/"/ contains=nuNested,nuEscaped
