@@ -13,6 +13,16 @@ mkdir -p ~/.vim/indent
 * copy the .vim-files to their corresponding directories in ~/.vim
 * restart vim, if necessary
 
+## Installation using Vim Package (recommended)
+
+* require vim 8+
+* tested with vim (but nvim should be working)
+* just clone to you vim pack dir
+
+```
+git clone https://github.com/elkasztano/nushell-syntax-vim ~/.vim/pack/plugins/start
+```
+
 ## Installation using Nushell script (experimental)
 * requires 'nu' to be in your PATH
 * use at your own risk
