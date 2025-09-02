@@ -673,7 +673,7 @@ syn match nuSqrbr ":" display
 syn region nuString start=/\v"/ skip=/\v\\./ end=/\v"/ contains=nuEscaped
 syn region nuString start='\'' end='\''
 syn region nuString start='`' end='`'
-syn region nuString start=/r#\+'/ end=/'#\+[^']*$/
+syn region nuString start=/r#\+'/ end=/'#\+[^' ]*\( \|\n\)/
 
 syn region nuStrInt start=/$'/ end=/'/ contains=nuNested
 syn region nuStrInt start=/$"/ skip=/\\./ end=/"/ contains=nuNested,nuEscaped
