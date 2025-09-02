@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Nushell
 " Maintainer: El Kasztano
-" Latest Revision: 01 Sep 2025
+" Latest Revision: 02 Sep 2025
 
 if exists("b:current_syntax")
 	finish
@@ -264,7 +264,7 @@ syn match nuCmd "\<hide-env\>" display
 syn match nuCmd "\<histogram\>" display
 syn match nuCmd "\<history\>" display
 syn match nuCmd "\<history session\>" display
-syn match nuCmd "\<http\>" display
+syn match nuCmd "\<http\> " display
 syn match nuCmd "\<http delete\>" display
 syn match nuCmd "\<http get\>" display
 syn match nuCmd "\<http head\>" display
@@ -513,6 +513,81 @@ syn match nuCmd "\<wrap\>" display
 syn match nuCmd "\<zip\>" display
 
 syn match nuCmd "\<exists\>" display
+
+syn match nuCmd "\<attr category\>" display
+syn match nuCmd "\<attr example\>" display
+syn match nuCmd "\<attr search-terms\>" display
+syn match nuCmd "\<bytes split\>" display
+syn match nuCmd "\<chunk-by\>" display
+syn match nuCmd "\<chunks\>" display
+syn match nuCmd "\<commandline edit\>" display
+syn match nuCmd "\<commandline get-cursor\>" display
+syn match nuCmd "\<commandline set-cursor\>" display
+syn match nuCmd "\<config flatten\>" display
+syn match nuCmd "\<config use-colors\>" display
+syn match nuCmd "\<date from-human\>" display
+syn match nuCmd "\<debug profile\>" display
+syn match nuCmd "\<decode base32\>" display
+syn match nuCmd "\<decode base32hex\>" display
+syn match nuCmd "\<encode base32\>" display
+syn match nuCmd "\<encode base32hex\>" display
+syn match nuCmd "\<format bits\>" display
+syn match nuCmd "\<format number\>" display
+syn match nuCmd "\<format pattern\>" display
+syn match nuCmd "\<from msgpack\>" display
+syn match nuCmd "\<from msgpackz\>" display
+syn match nuCmd "\<generate\>" display
+syn match nuCmd "\<help pipe-and-redirect\>" display
+syn match nuCmd "\<history import\>" display
+syn match nuCmd "\<interleave\>" display
+syn match nuCmd "\<into cell-path\>" display
+syn match nuCmd "\<into glob\>" display
+syn match nuCmd "\<is-not-empty\>" display
+syn match nuCmd "\<is-terminal\>" display
+syn match nuCmd "\<job\>" display
+syn match nuCmd "\<job flush\>" display
+syn match nuCmd "\<job id\>" display
+syn match nuCmd "\<job kill\>" display
+syn match nuCmd "\<job list\>" display
+syn match nuCmd "\<job recv\>" display
+syn match nuCmd "\<job send\>" display
+syn match nuCmd "\<job spawn\>" display
+syn match nuCmd "\<job tag\>" display
+syn match nuCmd "\<job unfreeze\>" display
+syn match nuCmd "\<merge deep\>" display
+syn match nuCmd "\<metadata access\>" display
+syn match nuCmd "\<metadata set\>" display
+syn match nuCmd "\<mktemp\>" display
+syn match nuCmd "\<panic\>" display
+syn match nuCmd "\<path self\>" display
+syn match nuCmd "\<plugin\>" display
+syn match nuCmd "\<plugin add\>" display
+syn match nuCmd "\<plugin list\>" display
+syn match nuCmd "\<plugin rm\>" display
+syn match nuCmd "\<plugin stop\>" display
+syn match nuCmd "\<plugin use\>" display
+syn match nuCmd "\<random binary\>" display
+syn match nuCmd "\<split cell-path\>" display
+syn match nuCmd "\<stor create\>" display
+syn match nuCmd "\<stor delete\>" display
+syn match nuCmd "\<stor export\>" display
+syn match nuCmd "\<stor import\>" display
+syn match nuCmd "\<stor insert\>" display
+syn match nuCmd "\<stor open\>" display
+syn match nuCmd "\<stor reset\>" display
+syn match nuCmd "\<stor update\>" display
+syn match nuCmd "\<str stats\>" display
+syn match nuCmd "\<tee\>" display
+syn match nuCmd "\<term query\>" display
+syn match nuCmd "\<to msgpack\>" display
+syn match nuCmd "\<to msgpackz\>" display
+syn match nuCmd "\<to yml\>" display
+syn match nuCmd "\<ulimit\>" display
+syn match nuCmd "\<uname\>" display
+syn match nuCmd "\<url split-query\>" display
+syn match nuCmd "\<version check\>" display
+syn match nuCmd "\<view blocks\>" display
+syn match nuCmd "\<view ir\>" display
 
 syn match nuNumber "\([a-zA-Z_\.]\+\d*\)\@<!\d\+" nextgroup=nuUnit,nuDur
 syn match nuNumber "\([a-zA-Z]\)\@<!\.\d\+" nextgroup=nuUnit,nuDur
