@@ -15,7 +15,7 @@ mkdir -p ~/.vim/indent
 
 ## Installation using Vim Package (recommended)
 
-* require vim 8+
+* requires vim 8+
 * tested with vim (but nvim should be working)
 * just clone to you vim pack dir
 
