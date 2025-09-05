@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Nushell
 " Maintainer: El Kasztano
-" Latest Revision: 03 Sep 2025
+" Latest Revision: 05 Sep 2025
 
 if exists("b:current_syntax")
 	finish
