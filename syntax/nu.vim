@@ -691,8 +691,6 @@ syn match nuEscaped "\\n" display
 syn match nuEscaped "\\t" display
 syn match nuEscaped "\\r" display
 
-let b:current_syntax = "nu"
-
 hi def link nuCmd	Keyword
 hi def link nuComment	Comment
 hi def link nuTodo	Todo
@@ -718,3 +716,5 @@ hi def link nuDot	Special
 hi def link nuSysEsc	PreProc
 hi def link nuAnsi	Special
 hi def link nuDefflag	Special
+
+let b:current_syntax = "nu"
