@@ -1,10 +1,14 @@
 " Vim indent file
-" Language: Nushell
-" Maintainer: El Kasztano
-" Last Updated: 07 December 2023
+" Language:	Nushell
+" Maintainer:	El Kasztano
+" URL:		https://github.com/elkasztano/nushell-syntax-vim
+" License:	MIT <https://opensource.org/license/mit>
+" Last Change:	2025 Sep 05
 
 " Only load if no other indent file is loaded
-if exists('b:did_indent') | finish | endif
+if exists("b:did_indent")
+  finish
+endif
 let b:did_indent = 1
 
 setlocal cindent
@@ -20,8 +24,12 @@ setlocal expandtab
 
 setlocal indentexpr=GetNuIndent(v:lnum)
 
+let b:undo_indent = "setl ai< cin< cink< cino< et< indk< sts< sw<"
+
 " only define once
-if exists("*GetNuIndent") | finish | endif
+if exists("*GetNuIndent")
+  finish
+endif
 
 let s:save_cpo = &cpo
 set cpo&vim
@@ -39,7 +47,7 @@ function GetNuIndent(lnum)
 	if getline(v:lnum) =~ "^\s*]\>"
 		return (prevlnum > 0) * indent(prevlnum) - shiftwidth()
 	endif
-	return cindent(a:lnum)	
+	return cindent(a:lnum)
 endfunction
 
 let &cpo = s:save_cpo

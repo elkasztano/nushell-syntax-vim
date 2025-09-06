@@ -1,10 +1,12 @@
 " Vim syntax file
-" Language: Nushell
-" Maintainer: El Kasztano
-" Latest Revision: 05 Sep 2025
+" Language:	Nushell
+" Maintainer:	El Kasztano
+" URL:		https://github.com/elkasztano/nushell-syntax-vim
+" License:	MIT <https://opensource.org/license/mit>
+" Last Change:	2025 Sep 05
 
 if exists("b:current_syntax")
-	finish
+  finish
 endif
 
 syn iskeyword @,192-255,-,_
