@@ -3,7 +3,7 @@
 " Maintainer:	El Kasztano
 " URL:		https://github.com/elkasztano/nushell-syntax-vim
 " License:	MIT <https://opensource.org/license/mit>
-" Last Change:	2025 Sep 05
+" Last Change:	2026 Jan 19
 
 if exists("b:current_syntax")
   finish
@@ -44,6 +44,7 @@ syn match nuCmd "\<bytes replace\>" display
 syn match nuCmd "\<bytes reverse\>" display
 syn match nuCmd "\<bytes starts-with\>" display
 syn match nuCmd "\<cal\>" display
+syn match nuCmd "\<catch\>" display
 syn match nuCmd "\<cd\>" display
 syn match nuCmd "\<char\>" display
 syn match nuCmd "\<clear\>" display
@@ -497,7 +498,7 @@ syn match nuCmd "\<url decode\>" display
 syn match nuCmd "\<url encode\>" display
 syn match nuCmd "\<url join\>" display
 syn match nuCmd "\<url parse\>" display
-syn match nuCmd "\<use\>" nextgroup=nuIdtfr skipwhite display
+syn match nuCmd "\<use\>" display
 syn match nuCmd "\<values\>" display
 syn match nuCmd "\<version\>" display
 syn match nuCmd "\<view\>" display
@@ -601,16 +602,16 @@ syn keyword nuTodo contained TODO FIXME NOTE
 syn match nuComment "#.*$" contains=nuTodo
 
 syn match nuOp "=" display
-syn match nuOp "-" display
+syn match nuOp "\(\h\)\@<!-\(\h\)\@!" display
 syn match nuOp "?" display
 syn match nuOp "<" display
 syn match nuOp ">" display
 syn match nuOp "+" display
-syn match nuOp "/" display
+syn match nuOp "\(\h\)\@<!/\(\h\)\@!" display
 syn match nuOp "\*" display
 syn match nuOp "!=" display
 syn match nuOp "=\~" display
-syn match nuOp "\!\~" display
+syn match nuOp "!\~" display
 syn match nuOp "\<in\>" nextgroup=nuPrpty skipwhite display
 syn match nuOp "\<not-in\>" nextgroup=nuPrpty skipwhite display
 syn match nuOp "\<not\>" display
