@@ -3,7 +3,7 @@
 " Maintainer:	El Kasztano
 " URL:		https://github.com/elkasztano/nushell-syntax-vim
 " License:	MIT <https://opensource.org/license/mit>
-" Last Change:	2026 Jan 19
+" Last Change:	2026 Mar 15
 
 if exists("b:current_syntax")
   finish
@@ -673,10 +673,10 @@ syn match nuSqrbr "\[" display
 syn match nuSqrbr "\]" display
 syn match nuSqrbr ":" display
 
+syn region nuRawString start=/r#\+'/ end=/'#\+\_s/ contains=NONE
 syn region nuString start=/\v"/ skip=/\v\\./ end=/\v"/ contains=nuEscaped
 syn region nuString start='\'' end='\''
 syn region nuString start='`' end='`'
-syn region nuString start=/r#\+'/ end=/#\+/ contains=nuString
 
 syn region nuStrInt start=/$'/ end=/'/ contains=nuNested
 syn region nuStrInt start=/$"/ skip=/\\./ end=/"/ contains=nuNested,nuEscaped
@@ -697,6 +697,7 @@ syn match nuEscaped "\\r" display
 hi def link nuCmd	Keyword
 hi def link nuComment	Comment
 hi def link nuTodo	Todo
+hi def link nuRawString	Constant
 hi def link nuString	Constant
 hi def link nuChar	Constant
 hi def link nuOp	Operator
