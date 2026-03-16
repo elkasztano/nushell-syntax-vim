@@ -602,12 +602,12 @@ syn keyword nuTodo contained TODO FIXME NOTE
 syn match nuComment "#.*$" contains=nuTodo
 
 syn match nuOp "=" display
-syn match nuOp "\(\h\)\@<!-\(\h\)\@!" display
+syn match nuOp "\v%([:[:alpha:]_])@<!-%(\h)@!" display
 syn match nuOp "?" display
 syn match nuOp "<" display
 syn match nuOp ">" display
 syn match nuOp "+" display
-syn match nuOp "\(\h\)\@<!/\(\h\)\@!" display
+syn match nuOp "\v%([:[:alpha:]_])@<!/%(\h)@!" display
 syn match nuOp "\*" display
 syn match nuOp "!=" display
 syn match nuOp "=\~" display
