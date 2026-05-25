@@ -3,7 +3,7 @@
 " Maintainer:	El Kasztano
 " URL:		https://github.com/elkasztano/nushell-syntax-vim
 " License:	MIT <https://opensource.org/license/mit>
-" Last Change:	2026 Mar 16
+" Last Change:	2026 May 25
 
 if exists("b:current_syntax")
   finish
@@ -627,7 +627,8 @@ syn match nuOp "\<starts-with\>" display
 syn match nuOp "\<ends-with\>" display
 syn match nuOp "\.\.\." display
 
-syn match nuVar "\$[^?\])} \t]\+"
+syn match nuVar '\$[[:alpha:]_][[:alnum:]_-]*'
+syn match nuNestedVar '\$[[:alpha:]_][[:alnum:]_-]*' contained
 
 syn match nuIdtfr :\(-\+\)\@![^? \t"=]\+: contained
 
@@ -681,7 +682,8 @@ syn region nuString start='`' end='`'
 syn region nuStrInt start=/$'/ end=/'/ contains=nuNested
 syn region nuStrInt start=/$"/ skip=/\\./ end=/"/ contains=nuNested,nuEscaped
 
-syn region nuNested start="("hs=s+1 end=")"he=e-1 contained contains=nuAnsi
+syn region nuNested start="(" end=")" contained contains=nuAnsi,nuNested,nuStrInt,nuNestedVar
+
 syn match nuAnsi "ansi[a-zA-Z0-9;' -]\+)"me=e-1 contained
 
 syn match nuClosure "|\(\w\|, \)\+|"
@@ -711,6 +713,7 @@ hi def link nuPrpty	Special
 hi def link nuSubCmd	Identifier
 hi def link nuStrInt	Constant
 hi def link nuNested	PreProc
+hi def link nuNestedVar	Type
 hi def link nuFlag	Special
 hi def link nuEscaped	Special
 hi def link nuCondi	Type
