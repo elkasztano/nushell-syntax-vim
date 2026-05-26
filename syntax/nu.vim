@@ -3,7 +3,7 @@
 " Maintainer:	El Kasztano
 " URL:		https://github.com/elkasztano/nushell-syntax-vim
 " License:	MIT <https://opensource.org/license/mit>
-" Last Change:	2026 May 25
+" Last Change:	2026 May 26
 
 if exists("b:current_syntax")
   finish
@@ -592,17 +592,13 @@ syn match nuCmd "\<version check\>" display
 syn match nuCmd "\<view blocks\>" display
 syn match nuCmd "\<view ir\>" display
 
-syn match nuNumber "\([a-zA-Z_\.]\+\d*\)\@<!\d\+" nextgroup=nuUnit,nuDur
-syn match nuNumber "\([a-zA-Z]\)\@<!\.\d\+" nextgroup=nuUnit,nuDur
-syn match nuNumber "\([a-zA-Z]\)\@<!_\d\+" nextgroup=nuUnit,nuDur,nuNumber
-syn match nuNumber "\d\+[eE][+-]\?\d\+" nextgroup=nuUnit,nuDur
-syn match nuNumber "\d\+\.\d\+[eE]\?[+-]\d\+" nextgroup=nuUnit,nuDur
+syn match nuNumber "\([a-zA-Z_\.]\+\d*\)\@<!\.\{0,2\}-\?\.\?\d\+[eE0-9\.+-<]*" nextgroup=nuUnit,nuDur
 
 syn keyword nuTodo contained TODO FIXME NOTE
 syn match nuComment "#.*$" contains=nuTodo
 
 syn match nuOp "=" display
-syn match nuOp "\v%([:[:alpha:]_])@<!-%(\h)@!" display
+syn match nuOp "\v%([:[:alpha:]_])@<!- %(\h)@!" display
 syn match nuOp "?" display
 syn match nuOp "<" display
 syn match nuOp ">" display
@@ -611,6 +607,7 @@ syn match nuOp "\v%([:[:alpha:]_])@<!/%(\h)@!" display
 syn match nuOp "\*" display
 syn match nuOp "!=" display
 syn match nuOp "=\~" display
+syn match nuOp "-=" display
 syn match nuOp "!\~" display
 syn match nuOp "\<in\>" nextgroup=nuPrpty skipwhite display
 syn match nuOp "\<not-in\>" nextgroup=nuPrpty skipwhite display
@@ -625,7 +622,7 @@ syn match nuOp "\<bit-shl\>" display
 syn match nuOp "\<bit-shr\>" display
 syn match nuOp "\<starts-with\>" display
 syn match nuOp "\<ends-with\>" display
-syn match nuOp "\.\.\." display
+syn match nuOp "\.\{3\}" display
 
 syn match nuVar '\$[[:alpha:]_][[:alnum:]_-]*'
 syn match nuNestedVar '\$[[:alpha:]_][[:alnum:]_-]*' contained
