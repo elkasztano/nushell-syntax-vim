@@ -127,7 +127,7 @@ syn region nuString start='`' end='`'
 syn region nuStrInt start=/$'/ end=/'/ contains=nuNested
 syn region nuStrInt start=/$"/ skip=/\\./ end=/"/ contains=nuNested,nuEscaped
 
-syn region nuNested start="(" end=")" contained contains=nuAnsi,nuNested,nuStrInt,nuNestedVar
+syn region nuNested start=/\\\@<!(/ end=/\\\@<!)/ skip=/\\./ contained contains=nuAnsi,nuNested,nuStrInt,nuNestedVar
 
 syn match nuAnsi "ansi[a-zA-Z0-9;' -]\+)"me=e-1 contained
 
