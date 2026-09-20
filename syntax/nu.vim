@@ -3,7 +3,7 @@
 " Maintainer:	El Kasztano
 " URL:		https://github.com/elkasztano/nushell-syntax-vim
 " License:	MIT <https://opensource.org/license/mit>
-" Last Change:	2026 September 18
+" Last Change:	2026 September 20
 
 if exists("b:current_syntax")
   finish
@@ -665,7 +665,8 @@ syn match nuFlag "\<-\k\+"
 syn match nuDefflag "\<--env\>" display contained nextgroup=nuIdtfr skipwhite
 syn match nuDefflag "\<--wrapped\>" display contained nextgroup=nuIdtfr skipwhite
 
-syn match nuSysEsc "\^\k\+" display
+syn match nuSysCom "\^[^\$]\S\+" display
+syn match nuSysComVar "\^\$\S\+" display
 
 syn match nuSqrbr "\[" display
 syn match nuSqrbr "\]" display
@@ -717,7 +718,8 @@ hi def link nuCondi	Type
 hi def link nuClosure	Type
 hi def link nuNumber	Number
 hi def link nuDot	Special
-hi def link nuSysEsc	PreProc
+hi def link nuSysCom	Italic
+hi def link nuSysComVar	BoldItalic
 hi def link nuAnsi	Special
 hi def link nuDefflag	Special
 
