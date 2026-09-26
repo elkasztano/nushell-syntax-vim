@@ -34,6 +34,10 @@ function! s:CleanLine(line) abort
 	return line
 endfunction
 
+function! s:IsClosureParameter(line) abort
+	return a:line =~# '^\s*|[^|]*|\s*$'
+endfunction
+
 function! s:FindMatchingOpen(lnum, col, open, close) abort
 	let depth = 1
 	let lnum = a:lnum
@@ -167,11 +171,21 @@ function! GetNuIndent(lnum)
 	endif
 
 	" Pipe indent logic
+	" A line such as "|it|" is a Nushell closure parameter declaration,
+	" not a pipeline continuation.
+	let prev_is_closure_parameter = s:IsClosureParameter(prev_clean)
+	let cur_is_closure_parameter = s:IsClosureParameter(cur_line)
+
 	let prev_ended_in_pipe = (
 				\ prev_clean =~ '|\s*$'
-				\ ) && !(prev_clean =~ '[{[(]\s*$')
+				\ ) &&
+				\ !(prev_clean =~ '[{[(]\s*$') &&
+				\ !prev_is_closure_parameter
 
-	let cur_starts_with_pipe = cur_line =~ '^\s*|'
+	let cur_starts_with_pipe = (
+				\ cur_line =~ '^\s*|'
+				\ ) &&
+				\ !cur_is_closure_parameter
 
 	let prev_prevlnum = prevnonblank(prevlnum - 1)
 
@@ -182,12 +196,19 @@ function! GetNuIndent(lnum)
 	endif
 
 	let prev_prev_clean = s:CleanLine(prev_prev_line)
+	let prev_prev_is_closure_parameter =
+				\ s:IsClosureParameter(prev_prev_clean)
 
-	let prev_started_with_pipe = prev_line =~ '^\s*|'
+	let prev_started_with_pipe = (
+				\ prev_line =~ '^\s*|'
+				\ ) &&
+				\ !prev_is_closure_parameter
 
 	let prev_prev_ended_in_pipe = (
 				\ prev_prev_clean =~ '|\s*$'
-				\ ) && !(prev_prev_clean =~ '[{[(]\s*$')
+				\ ) &&
+				\ !(prev_prev_clean =~ '[{[(]\s*$') &&
+				\ !prev_prev_is_closure_parameter
 
 	let prev_was_pipeline = prev_started_with_pipe || prev_prev_ended_in_pipe
 
